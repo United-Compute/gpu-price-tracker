@@ -1,31 +1,44 @@
-# gpu-price-tracker
+# Keepa Price Tracker
 
-## why GPU price tracker?
+This script fetches pricing history for Amazon products using the Keepa API.
 
-- price trendd analyses (find out when the best time is to purchase GPUs)
-- comparison shopping (find out if current price is a good value)
-- helps for data driven decisions
-- value assesment (which GPU currently has the best performance for the dollar)
-- budget planning (ie when will be expected price drops)
-- market transparancy (stock market but for gpus)
+## Features
 
-## what is it?
+- Retrieves historical price data for a specific Amazon product
+- Converts Keepa's time format to standard datetime
+- Exports price history to CSV
+- Generates a price history chart
 
-A page at www.unitedcompute/gpu-price-tracker which is listing all the available gpus on amazon from runpod and is listing their
+## Requirements
 
-- product name
-- vram
-- membuswidth
-- bandwith
-- fp16
-- tdp
-- fl/watt
-- price/fl
-- market price (including upwards or downwards symbol AND a small)
-- column with a small image which displays the price history in a graph (clickable so that people can clearly see the price history)
+```
+requests
+pandas
+matplotlib
+```
 
-## how are i am going to do it?
+## Installation
 
-- using https://webservices.amazon.com/paapi5/documentation/ to collect the prices from certain products on amazon
-- have a github job running every day to push the new pricing data to supabase
-- add the newsletter field on the website and enable daily or weekly updates on gpu pricing updates
+1. Clone this repository
+2. Install the required packages:
+
+```bash
+pip install requests pandas matplotlib
+```
+
+## Usage
+
+1. Update the `ASIN` variable in `keepa_price_tracker.py` with your desired Amazon product ID
+2. Run the script:
+
+```bash
+python keepa_price_tracker.py
+```
+
+3. The script will generate:
+   - A CSV file with price history data
+   - A PNG chart showing price trends
+
+## API Documentation
+
+For more details on Keepa API parameters, visit the [Keepa API documentation](https://keepa.com/#!discuss/t/product-request/116).
