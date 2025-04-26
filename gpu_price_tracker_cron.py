@@ -50,13 +50,13 @@ def keepa_time_to_datetime(keepa_time):
     unix_time_ms = (keepa_time + 21564000) * 60000
     return datetime.fromtimestamp(unix_time_ms / 1000)
 
-def is_valid_date(date, release_date=datetime(2020, 1, 1)):
+def is_valid_date(date, release_date=None):
     """Check if date is valid"""
     if date is None:
         return False
     
-    # Filter out dates before 2010 (too old to be valid)
-    if date.year < 2010:
+    # Filter out dates before the product release date (if available)
+    if release_date and date < release_date:
         return False
     
     # Filter out dates very far in the future (more than 5 years)
@@ -85,7 +85,7 @@ def get_product_data(asin, domain=DOMAIN, api_key=KEEPA_API_KEY, update=1, buybo
         logger.error(f"Request failed for ASIN {asin}: {str(e)}")
         return None
 
-def process_buybox_data(data, asin):
+def process_buybox_data(data, asin, supabase_release_date=None):
     """Process Buy Box price data from Keepa API response"""
     if not data or 'products' not in data or not data['products']:
         logger.warning(f"No product data found for ASIN {asin}")
@@ -95,13 +95,18 @@ def process_buybox_data(data, asin):
     product_title = product.get('title', f"Unknown Product ({asin})")
     logger.info(f"Processing data for: {product_title}")
     
-    # Get product release date if available
-    release_date = datetime(2010, 1, 1)  # More lenient default release date
-    if 'releaseDate' in product and product['releaseDate'] > 0:
-        release_date_obj = keepa_time_to_datetime(product['releaseDate'])
-        if release_date_obj:
-            release_date = release_date_obj
-            logger.info(f"Product release date: {release_date.isoformat()}")
+    # Use Supabase release date if available, otherwise get from Keepa or use default
+    if supabase_release_date:
+        release_date = supabase_release_date
+        logger.info(f"Using release date from Supabase: {release_date.isoformat()}")
+    else:
+        # Get product release date from Keepa as fallback
+        release_date = datetime(2010, 1, 1)  # Default release date
+        if 'releaseDate' in product and product['releaseDate'] > 0:
+            release_date_obj = keepa_time_to_datetime(product['releaseDate'])
+            if release_date_obj:
+                release_date = release_date_obj
+                logger.info(f"Using Keepa release date: {release_date.isoformat()}")
     
     # Extract additional product details
     product_details = {
@@ -153,7 +158,7 @@ def process_buybox_data(data, asin):
                         # Keepa stores prices in cents, divide by 100
                         actual_price = price / 100 if price > 0 else None
                         
-                        if actual_price and is_valid_date(date):
+                        if actual_price and is_valid_date(date, release_date):
                             # Convert to string for JSON
                             date_str = date.isoformat()
                             price_history[date_str] = actual_price
@@ -307,6 +312,17 @@ def main():
     for row in data:
         row_id = row.get('id')
         asin = row.get('amazon_asin')
+        release_date_str = row.get('release_date')
+        
+        # Parse release date if available
+        release_date = None
+        if release_date_str:
+            try:
+                # Parse the date from Supabase format (YYYY-MM-DD)
+                release_date = datetime.fromisoformat(release_date_str)
+                logger.info(f"Using release date from Supabase: {release_date}")
+            except (ValueError, TypeError):
+                logger.warning(f"Invalid release date format: {release_date_str}")
         
         if not asin:
             logger.warning(f"Row {row_id}: No ASIN available, skipping")
@@ -318,8 +334,8 @@ def main():
         keepa_data = get_product_data(asin)
         
         if keepa_data:
-            # Process buy box data
-            processed_data = process_buybox_data(keepa_data, asin)
+            # Pass the release date to the processing function
+            processed_data = process_buybox_data(keepa_data, asin, release_date)
             
             if processed_data:
                 # Save locally first
