@@ -22,19 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests supabase matplotlib pandas
+          pip install -r requirements.txt
 
       - name: Run price tracker script
         run: python gpu_price_tracker_cron.py
-        env:
-          KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-
-      - name: Commit and push changes if any new files were created
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add output/*.json
-          git commit -m "Update price history data" -a || echo "No changes to commit"
-          git push
