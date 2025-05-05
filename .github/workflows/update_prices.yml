@@ -29,3 +29,18 @@ jobs:
 
       - name: Update charts and README
         run: python update_gpu_readme.py
+
+      - name: Configure git
+        run: |
+          git config --global user.name "yachty66"
+          git config --global user.email "maxhager28@gmail.com"
+
+      - name: Add and commit changes
+        run: |
+          git add price_history_charts/*.png README.md
+          git diff --cached --quiet || git commit -m "Update charts and README [skip ci]"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
