@@ -87,7 +87,7 @@ def generate_table_rows(gpus):
         # Calculate TFLOPS/$
         if fp16_val and market_price_val and market_price_val > 0:
             tflops_per_dollar = fp16_val / market_price_val
-            tflops_per_dollar_str = f"{tflops_per_dollar:.2f}"
+            tflops_per_dollar_str = f"{tflops_per_dollar:.4f}"
         else:
             tflops_per_dollar_str = ""
 
