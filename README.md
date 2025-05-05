@@ -6,6 +6,8 @@ Click on any chart to see the full price history.
 
 ## TABLE BELOW IS UPDATED DAILY!
 
+_Last updated: <!-- LAST_UPDATED -->2024-06-01<!-- LAST_UPDATED -->_
+
 <!-- PRICES_START -->
 <table>
   <tr>

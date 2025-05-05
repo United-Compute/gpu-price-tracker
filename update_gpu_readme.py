@@ -150,6 +150,20 @@ def update_readme(table_html):
     with open(README_PATH, "w") as f:
         f.write(new_content)
 
+def update_last_updated_date():
+    with open(README_PATH, "r") as f:
+        content = f.read()
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    # Replace the date between the markers
+    new_content = re.sub(
+        r"(<!-- LAST_UPDATED -->)(.*?)(<!-- LAST_UPDATED -->)",
+        rf"\1{today}\3",
+        content,
+        flags=re.DOTALL
+    )
+    with open(README_PATH, "w") as f:
+        f.write(new_content)
+
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
     gpus = fetch_all_gpus()
@@ -163,6 +177,7 @@ def main():
     # Update README with latest table
     table_html = generate_table_rows(gpus)
     update_readme(table_html)
+    update_last_updated_date()
     print("README.md updated with latest GPU data from Supabase.")
 
 if __name__ == "__main__":
