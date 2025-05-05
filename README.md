@@ -5,6 +5,11 @@ The table below is updated daily and includes the latest price, price history ch
 
 Click on any chart to see the full price history.
 
+## 📁 Data Folder
+
+The `data/` folder contains one JSON file per GPU, each storing daily price history as date/price pairs.  
+Files are named after the GPU (e.g., `NVIDIA_H100_PCIe_80_GB.json`) and updated daily automatically by the GitHub Action.
+
 ## TABLE BELOW IS UPDATED DAILY!
 
 _Last updated: <!-- LAST_UPDATED -->2024-06-01<!-- LAST_UPDATED -->_
