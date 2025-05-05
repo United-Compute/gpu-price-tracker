@@ -26,9 +26,16 @@ jobs:
 
       - name: Run price tracker script
         run: python gpu_price_tracker_cron.py
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
 
       - name: Update charts and README
         run: python update_gpu_readme.py
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
 
       - name: Configure git
         run: |
