@@ -35,7 +35,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX 2000 Ada Generation</td>
-    <td>$716.01</td>
+    <td>$715.95</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png" alt="Price History" style="display:block;margin:auto;">
@@ -358,7 +358,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 5080</td>
-    <td>$1,990.00</td>
+    <td>$1,799.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png" alt="Price History" style="display:block;margin:auto;">
@@ -377,7 +377,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 4090</td>
-    <td>$3,450.99</td>
+    <td>$3,582.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png" alt="Price History" style="display:block;margin:auto;">
