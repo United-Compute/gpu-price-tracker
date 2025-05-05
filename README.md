@@ -1,5 +1,10 @@
-dont touch
+# GPU Price Tracker
 
+This project tracks the market prices and performance metrics of various GPUs.  
+The table below is updated daily and includes the latest price, price history chart, and key specifications for each GPU.  
+Click on any chart to see the full price history.
+
+## TABLE BELOW IS UPDATED DAILY!
 
 <!-- PRICES_START -->
 <table>
