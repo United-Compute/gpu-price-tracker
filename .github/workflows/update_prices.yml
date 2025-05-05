@@ -26,3 +26,6 @@ jobs:
 
       - name: Run price tracker script
         run: python gpu_price_tracker_cron.py
+
+      - name: Update charts and README
+        run: python update_gpu_readme.py

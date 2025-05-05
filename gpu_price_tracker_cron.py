@@ -15,6 +15,9 @@ import os
 import time
 from datetime import datetime
 import collections
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(
@@ -31,9 +34,9 @@ except ImportError:
     exit(1)
 
 # API Configuration
-KEEPA_API_KEY = "bdmmpr7jl1pq9iopubktrp53a9r31m4otho1btpd5fv10n30lf8hje1c3ah3vdng"
-SUPABASE_URL = "https://jftqjabhnesfphpkoilc.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmdHFqYWJobmVzZnBocGtvaWxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NzI4NzIsImV4cCI6MjA2MDU0ODg3Mn0.S0ZdRIauUyMhdVJtYFNquvnlW3dV1wxERy7YrurZyag"
+KEEPA_API_KEY = os.getenv("KEEPA_API_KEY")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 DOMAIN = 1  # 1 for Amazon.com
 BUY_BOX_PRICE = 18  # Buy Box price index

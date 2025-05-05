@@ -3,10 +3,13 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import os
 import re
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Supabase credentials
-SUPABASE_URL = "https://jftqjabhnesfphpkoilc.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmdHFqYWJobmVzZnBocGtvaWxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NzI4NzIsImV4cCI6MjA2MDU0ODg3Mn0.S0ZdRIauUyMhdVJtYFNquvnlW3dV1wxERy7YrurZyag"
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 README_PATH = "README.md"
 CHARTS_DIR = "price_history_charts"
