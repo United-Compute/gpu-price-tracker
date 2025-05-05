@@ -154,10 +154,12 @@ def update_last_updated_date():
     with open(README_PATH, "r") as f:
         content = f.read()
     today = datetime.utcnow().strftime("%Y-%m-%d")
-    # Replace the date between the markers
+    # Use a function for replacement to avoid backreference issues
+    def replacer(match):
+        return f"{match.group(1)}{today}{match.group(3)}"
     new_content = re.sub(
         r"(<!-- LAST_UPDATED -->)(.*?)(<!-- LAST_UPDATED -->)",
-        r"\1" + today + r"\3",
+        replacer,
         content,
         flags=re.DOTALL
     )
