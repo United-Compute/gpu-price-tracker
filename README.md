@@ -75,3 +75,23 @@ Track current prices, specifications, and historical trends for popular GPUs.
 | NVIDIA GeForce RTX 4060 Ti | $699.00 | 8 GB | 22.06 | 160W | May 13, 2023 |
 | NVIDIA GeForce RTX 4070 | $1,299.99 | 12 GB | 29.15 | 200W | Apr 12, 2023 |
 | NVIDIA GeForce RTX 4090 | $3,450.99 | 24 GB | 82.58 | 450W | Sep 20, 2022 |
+
+
+## Option 2: Sparklines
+
+Some Markdown renderers (including GitHub) support emoji and special characters, so you can use them to create simple sparklines:
+
+```markdown
+| GPU Model | Current Price | Price Trend (1 Year) |
+|-----------|---------------|----------------------|
+| NVIDIA A40 PCIe | $5,999.00 | ▁▂▅▃▂▁▁▂▄▆█ |
+| NVIDIA A100 40GB PCIe | $7,999.99 | █▇▆▆▅▄▄▃▃▂▁ |
+| NVIDIA RTX 3090 | $1,699.99 | █▆▄▃▂▃▅▇▆▆▅ |
+
+
+
+
+| GPU Model | Current Price | Price History |
+|-----------|---------------|---------------|
+| NVIDIA A100 40GB PCIe | $7,999.99 | ![A100 Price History](https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Nvidia_GeForce_RTX_4090_Founders_Edition_price_trend.svg/320px-Nvidia_GeForce_RTX_4090_Founders_Edition_price_trend.svg.png) |
+| NVIDIA A40 PCIe | $5,999.00 | ![A40 Price History](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Price_Comparison.svg/320px-Price_Comparison.svg.png) |
