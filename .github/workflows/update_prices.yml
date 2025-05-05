@@ -1,5 +1,8 @@
 name: Update GPU Prices
 
+permissions:
+  contents: write
+
 on:
   schedule:
     # Run daily at 12:00 UTC
