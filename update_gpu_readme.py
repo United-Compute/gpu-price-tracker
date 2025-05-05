@@ -157,7 +157,7 @@ def update_last_updated_date():
     # Replace the date between the markers
     new_content = re.sub(
         r"(<!-- LAST_UPDATED -->)(.*?)(<!-- LAST_UPDATED -->)",
-        rf"\1{today}\3",
+        r"\1" + today + r"\3",
         content,
         flags=re.DOTALL
     )
