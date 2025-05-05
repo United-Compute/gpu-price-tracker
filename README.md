@@ -17,7 +17,7 @@
   <tr>
     <td>NVIDIA H100 PCIe 80 GB</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_H100_PCIe_80_GB.png" alt="Price History" width="100"></td>
     <td>204.9</td>
     <td>350</td>
     <td>0.59</td>
@@ -31,7 +31,7 @@
   <tr>
     <td>NVIDIA RTX 2000 Ada Generation</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png" alt="Price History" width="100"></td>
     <td>12</td>
     <td>70</td>
     <td>0.17</td>
@@ -45,7 +45,7 @@
   <tr>
     <td>NVIDIA RTX 6000 Ada Generation</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_6000_Ada_Generation.png" alt="Price History" width="100"></td>
     <td>91.06</td>
     <td>300</td>
     <td>0.3</td>
@@ -59,7 +59,7 @@
   <tr>
     <td>NVIDIA H100 PCIe 96 GB</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_H100_PCIe_96_GB.png" alt="Price History" width="100"></td>
     <td>248.3</td>
     <td>700</td>
     <td>0.35</td>
@@ -73,7 +73,7 @@
   <tr>
     <td>NVIDIA RTX A6000</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A6000.png" alt="Price History" width="100"></td>
     <td>38.71</td>
     <td>300</td>
     <td>0.13</td>
@@ -87,7 +87,7 @@
   <tr>
     <td>NVIDIA RTX A5000</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png" alt="Price History" width="100"></td>
     <td>27.77</td>
     <td>230</td>
     <td>0.12</td>
@@ -101,7 +101,7 @@
   <tr>
     <td>NVIDIA RTX 4000 Ada Generation</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_4000_Ada_Generation.png" alt="Price History" width="100"></td>
     <td>26.73</td>
     <td>130</td>
     <td>0.21</td>
@@ -115,7 +115,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 3090 Ti</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090_Ti.png" alt="Price History" width="100"></td>
     <td>40</td>
     <td>450</td>
     <td>0.09</td>
@@ -129,7 +129,7 @@
   <tr>
     <td>NVIDIA RTX A4500</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A4500.png" alt="Price History" width="100"></td>
     <td>23.65</td>
     <td>200</td>
     <td>0.12</td>
@@ -143,7 +143,7 @@
   <tr>
     <td>NVIDIA RTX A4000</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A4000.png" alt="Price History" width="100"></td>
     <td>19.17</td>
     <td>140</td>
     <td>0.14</td>
@@ -157,7 +157,7 @@
   <tr>
     <td>NVIDIA L40</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_L40.png" alt="Price History" width="100"></td>
     <td>90.52</td>
     <td>300</td>
     <td>0.3</td>
@@ -171,7 +171,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 3090</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png" alt="Price History" width="100"></td>
     <td>35.58</td>
     <td>350</td>
     <td>0.1</td>
@@ -185,7 +185,7 @@
   <tr>
     <td>NVIDIA A100 40GB PCle</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A100_40GB_PCle.png" alt="Price History" width="100"></td>
     <td>77.97</td>
     <td>250</td>
     <td>0.3</td>
@@ -199,7 +199,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 5090</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5090.png" alt="Price History" width="100"></td>
     <td>104.8</td>
     <td>575</td>
     <td>0.18</td>
@@ -213,7 +213,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 4060 Ti</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4060_Ti.png" alt="Price History" width="100"></td>
     <td>22.06</td>
     <td>160</td>
     <td>0.14</td>
@@ -227,7 +227,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 3070</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3070.png" alt="Price History" width="100"></td>
     <td>20.31</td>
     <td>220</td>
     <td>0.09</td>
@@ -241,7 +241,7 @@
   <tr>
     <td>Nvidia GeForce RTX 2080</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Nvidia_GeForce_RTX_2080.png" alt="Price History" width="100"></td>
     <td>20.14</td>
     <td>215</td>
     <td>0.09</td>
@@ -255,7 +255,7 @@
   <tr>
     <td>NVIDIA A40 PCIe</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A40_PCIe.png" alt="Price History" width="100"></td>
     <td>37.42</td>
     <td>300</td>
     <td>0.12</td>
@@ -269,7 +269,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 5080</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png" alt="Price History" width="100"></td>
     <td>56.28</td>
     <td>360</td>
     <td>0.16</td>
@@ -283,7 +283,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 4090</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png" alt="Price History" width="100"></td>
     <td>82.58</td>
     <td>450</td>
     <td>0.18</td>
@@ -297,7 +297,7 @@
   <tr>
     <td>Quadro RTX 5000</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png" alt="Price History" width="100"></td>
     <td>22.3</td>
     <td>230</td>
     <td>0.1</td>
@@ -311,7 +311,7 @@
   <tr>
     <td>NVIDIA GeForce RTX 4070</td>
     <td></td>
-    <td><img src="https://www.unitedcompute.ai/logo.png" alt="Price History" width="100"></td>
+    <td><img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4070.png" alt="Price History" width="100"></td>
     <td>29.15</td>
     <td>200</td>
     <td>0.15</td>
