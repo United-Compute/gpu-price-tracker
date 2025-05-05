@@ -16,7 +16,7 @@
   </tr>
   <tr>
     <td>NVIDIA H100 PCIe 80 GB</td>
-    <td></td>
+    <td>$27,549.95</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_H100_PCIe_80_GB.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_H100_PCIe_80_GB.png" alt="Price History" style="display:block;margin:auto;">
@@ -35,7 +35,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX 2000 Ada Generation</td>
-    <td></td>
+    <td>$716.01</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png" alt="Price History" style="display:block;margin:auto;">
@@ -54,7 +54,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX 6000 Ada Generation</td>
-    <td></td>
+    <td>$7,599.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_6000_Ada_Generation.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_6000_Ada_Generation.png" alt="Price History" style="display:block;margin:auto;">
@@ -73,7 +73,7 @@
   </tr>
   <tr>
     <td>NVIDIA H100 PCIe 96 GB</td>
-    <td></td>
+    <td>$28,549.95</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_H100_PCIe_96_GB.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_H100_PCIe_96_GB.png" alt="Price History" style="display:block;margin:auto;">
@@ -92,7 +92,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX A6000</td>
-    <td></td>
+    <td>$5,599.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A6000.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A6000.png" alt="Price History" style="display:block;margin:auto;">
@@ -111,7 +111,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX A5000</td>
-    <td></td>
+    <td>$1,910.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png" alt="Price History" style="display:block;margin:auto;">
@@ -130,7 +130,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX 4000 Ada Generation</td>
-    <td></td>
+    <td>$1,595.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_4000_Ada_Generation.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_4000_Ada_Generation.png" alt="Price History" style="display:block;margin:auto;">
@@ -149,7 +149,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 3090 Ti</td>
-    <td></td>
+    <td>$1,999.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090_Ti.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090_Ti.png" alt="Price History" style="display:block;margin:auto;">
@@ -168,7 +168,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX A4500</td>
-    <td></td>
+    <td>$1,750.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A4500.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A4500.png" alt="Price History" style="display:block;margin:auto;">
@@ -187,7 +187,7 @@
   </tr>
   <tr>
     <td>NVIDIA RTX A4000</td>
-    <td></td>
+    <td>$1,000.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A4000.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A4000.png" alt="Price History" style="display:block;margin:auto;">
@@ -206,7 +206,7 @@
   </tr>
   <tr>
     <td>NVIDIA L40</td>
-    <td></td>
+    <td>$6,099.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_L40.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_L40.png" alt="Price History" style="display:block;margin:auto;">
@@ -225,7 +225,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 3090</td>
-    <td></td>
+    <td>$1,699.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png" alt="Price History" style="display:block;margin:auto;">
@@ -244,7 +244,7 @@
   </tr>
   <tr>
     <td>NVIDIA A100 40GB PCle</td>
-    <td></td>
+    <td>$7,999.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A100_40GB_PCle.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A100_40GB_PCle.png" alt="Price History" style="display:block;margin:auto;">
@@ -263,7 +263,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 5090</td>
-    <td></td>
+    <td>$4,300.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5090.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5090.png" alt="Price History" style="display:block;margin:auto;">
@@ -282,7 +282,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 4060 Ti</td>
-    <td></td>
+    <td>$699.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4060_Ti.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4060_Ti.png" alt="Price History" style="display:block;margin:auto;">
@@ -301,7 +301,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 3070</td>
-    <td></td>
+    <td>$549.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3070.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3070.png" alt="Price History" style="display:block;margin:auto;">
@@ -320,7 +320,7 @@
   </tr>
   <tr>
     <td>Nvidia GeForce RTX 2080</td>
-    <td></td>
+    <td>$775.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Nvidia_GeForce_RTX_2080.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Nvidia_GeForce_RTX_2080.png" alt="Price History" style="display:block;margin:auto;">
@@ -339,7 +339,7 @@
   </tr>
   <tr>
     <td>NVIDIA A40 PCIe</td>
-    <td></td>
+    <td>$5,999.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A40_PCIe.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A40_PCIe.png" alt="Price History" style="display:block;margin:auto;">
@@ -358,7 +358,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 5080</td>
-    <td></td>
+    <td>$1,990.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png" alt="Price History" style="display:block;margin:auto;">
@@ -377,7 +377,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 4090</td>
-    <td></td>
+    <td>$3,450.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png" alt="Price History" style="display:block;margin:auto;">
@@ -396,7 +396,7 @@
   </tr>
   <tr>
     <td>Quadro RTX 5000</td>
-    <td></td>
+    <td>$835.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png" alt="Price History" style="display:block;margin:auto;">
@@ -415,7 +415,7 @@
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 4070</td>
-    <td></td>
+    <td>$1,299.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4070.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4070.png" alt="Price History" style="display:block;margin:auto;">
