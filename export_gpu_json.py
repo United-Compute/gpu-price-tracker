@@ -24,8 +24,7 @@ def save_gpu_price_history_json(gpu):
     os.makedirs(DATA_DIR, exist_ok=True)
     filename = sanitize_filename(gpu.get('gpu_name', '')) + ".json"
     output_path = os.path.join(DATA_DIR, filename)
-    price_history = gpu.get('price_history') or {}
-    prices = price_history.get('prices', {})
+    prices = gpu.get('amazon_buy_box') or {}
     data = {
         "gpu_name": gpu.get('gpu_name', ''),
         "prices": prices

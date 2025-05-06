@@ -24,34 +24,27 @@ def fetch_all_gpus():
         raise ValueError("No GPUs found in the database.")
     return response.data
 
-def get_latest_market_price(price_history):
-    if not price_history or not price_history.get('prices'):
+def get_latest_market_price(price_dict):
+    if not price_dict:
         return ""
-    prices_dict = price_history['prices']
-    if not prices_dict:
-        return ""
-    latest_date = max(prices_dict.keys())
-    latest_price = prices_dict[latest_date]
+    latest_date = max(price_dict.keys())
+    latest_price = price_dict[latest_date]
     return f"${latest_price:,.2f}"
 
-def get_latest_market_price_value(price_history):
+def get_latest_market_price_value(price_dict):
     """Return the latest market price as a float (or None if not available)."""
-    if not price_history or not price_history.get('prices'):
+    if not price_dict:
         return None
-    prices_dict = price_history['prices']
-    if not prices_dict:
-        return None
-    latest_date = max(prices_dict.keys())
-    latest_price = prices_dict[latest_date]
+    latest_date = max(price_dict.keys())
+    latest_price = price_dict[latest_date]
     return float(latest_price)
 
-def plot_price_history(gpu_name, price_history, output_path):
-    if not price_history or not price_history.get('prices'):
+def plot_price_history(gpu_name, price_dict, output_path):
+    if not price_dict:
         print(f"No price history for {gpu_name}, skipping.")
         return
-    prices_dict = price_history['prices']
-    dates = [datetime.fromisoformat(d) for d in prices_dict.keys()]
-    prices = [prices_dict[d] for d in prices_dict.keys()]
+    dates = [datetime.fromisoformat(d) for d in price_dict.keys()]
+    prices = [price_dict[d] for d in price_dict.keys()]
     if not dates or not prices:
         print(f"No valid price data for {gpu_name}, skipping.")
         return
@@ -75,16 +68,14 @@ def generate_table_rows(gpus):
         filename = sanitize_filename(gpu.get('gpu_name', '')) + ".png"
         chart_url = f"https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/{filename}"
 
-        # Get FP16 and market price as numbers
         fp16 = gpu.get('fp_16', '')
         try:
             fp16_val = float(fp16)
         except (ValueError, TypeError):
             fp16_val = None
 
-        market_price_val = get_latest_market_price_value(gpu.get('price_history', {}))
+        market_price_val = get_latest_market_price_value(gpu.get('amazon_buy_box', {}))
 
-        # Calculate TFLOPS/$
         if fp16_val and market_price_val and market_price_val > 0:
             tflops_per_dollar = fp16_val / market_price_val
             tflops_per_dollar_str = f"{tflops_per_dollar:.3f}"
@@ -93,7 +84,7 @@ def generate_table_rows(gpus):
 
         rows.append(f"""  <tr>
     <td>{gpu.get('gpu_name', '')}</td>
-    <td>{get_latest_market_price(gpu.get('price_history', {}))}</td>
+    <td>{get_latest_market_price(gpu.get('amazon_buy_box', {}))}</td>
     <td>
       <a href="{chart_url}">
         <img src="{chart_url}" alt="Price History" style="display:block;margin:auto;">
@@ -172,10 +163,10 @@ def main():
     # Generate and save price history charts
     for row in gpus:
         gpu_name = row['gpu_name']
-        price_history = row['price_history']
+        price_dict = row['amazon_buy_box']
         filename = sanitize_filename(gpu_name) + ".png"
         output_path = os.path.join(CHARTS_DIR, filename)
-        plot_price_history(gpu_name, price_history, output_path)
+        plot_price_history(gpu_name, price_dict, output_path)
     # Update README with latest table
     table_html = generate_table_rows(gpus)
     update_readme(table_html)

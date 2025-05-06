@@ -1,4 +1,5 @@
 from fetchers.buy_box_amazon import process_buy_box_data
+from fetchers.used_amazon import process_amazon_used_data
 from supabase import create_client
 import os
 from dotenv import load_dotenv
@@ -25,8 +26,8 @@ def fetch_all_gpus():
 
 if __name__ == "__main__":
     gpus = fetch_all_gpus()
-    result = process_buy_box_data(gpus)
-    print(result)
+    process_buy_box_data(gpus)
+    # process_amazon_used_data(gpus)
     #in the next step i want to 
     # for gpu in gpus:
     #     all_prices = aggregate_all_prices(gpu)
