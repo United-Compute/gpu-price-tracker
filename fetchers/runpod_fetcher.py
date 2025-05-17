@@ -18,7 +18,7 @@ GPU_MAPPING = {
     "NVIDIA A100 80GB SXM": "A100 SXM",
     "NVIDIA A30 PCIe": "A30",
     "NVIDIA A40 PCIe": "A40",
-    "NVIDIA B200 SXM 192 GB": "B200 SXM",
+    "NVIDIA B200 SXM 192 GB": "B200",
     "NVIDIA GeForce RTX 3090": "RTX 3090",
     "NVIDIA GeForce RTX 3090 Ti": "RTX 3090 Ti",
     "NVIDIA GeForce RTX 4070 Ti": "RTX 4070 Ti",
@@ -49,13 +49,8 @@ GPU_MAPPING = {
     "NVIDIA Tesla V100 SXM2 32 GB": "V100 SXM2 32GB",
 }
 
-def process_runpod_prices():
-    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+def process_runpod_prices(gpu_rows):
     runpod.api_key = RUNPOD_KEY
-
-    # Fetch all rows from the database
-    response = supabase.table('gpu-price-tracker').select('*').execute()
-    gpu_rows = response.data
 
     # Get all available GPUs from RunPod
     available_gpus = runpod.get_gpus()
@@ -91,6 +86,7 @@ def process_runpod_prices():
 
     # Batch update using upsert
     if updates:
+        supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
         supabase.table('gpu-price-tracker').upsert(updates).execute()
         print(f"Batch updated {len(updates)} rows with RunPod prices.")
     else:

@@ -33,6 +33,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
+          RUNPOD_KEY: ${{ secrets.RUNPOD_KEY }}
 
       - name: Update charts and README
         run: python update_gpu_readme.py
