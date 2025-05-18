@@ -13,7 +13,7 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 GPU_MAPPING = {
-    "MI300X": "MI300X",
+    "AMD Radeon Instinct MI300X": "MI300X",
     "NVIDIA A100 80GB PCle": "A100 PCIe",
     "NVIDIA A100 80GB SXM": "A100 SXM",
     "NVIDIA A30 PCIe": "A30",
