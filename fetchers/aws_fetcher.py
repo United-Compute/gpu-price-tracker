@@ -11,8 +11,8 @@ def get_gpu_instance_types(region_name=None):
     Returns:
         list: A list of dictionaries, where each dictionary contains details
               for a GPU instance type (InstanceType, GpuName, GpuManufacturer,
-              GpuCount, GpuMemoryMiB). Returns an empty list if no GPU instances
-              are found or an error occurs.
+              GpuCount, GpuMemoryMiB, InferredInterconnect). Returns an empty list 
+              if no GPU instances are found or an error occurs.
     """
     try:
         if region_name:
@@ -27,14 +27,24 @@ def get_gpu_instance_types(region_name=None):
             for instance_type_info in page.get('InstanceTypes', []):
                 gpu_info = instance_type_info.get('GpuInfo')
                 if gpu_info and gpu_info.get('Gpus'):
-                    # Assuming instances have homogenous GPUs, take the first one
-                    gpu_details = gpu_info['Gpus'][0] 
+                    gpu_details = gpu_info['Gpus'][0]
+                    instance_type_name = instance_type_info.get('InstanceType')
+                    
+                    # Infer interconnect based on instance type knowledge
+                    inferred_interconnect = "PCIe (assumed)" # Default assumption
+                    if instance_type_name:
+                        if instance_type_name.startswith("p4d") or instance_type_name.startswith("p5"):
+                            inferred_interconnect = "SXM/NVLink (inferred for P4d/P5 series)"
+                        # Add more rules here if known for other instance types
+                        # e.g., some 'g' series might be explicitly PCIe
+
                     instance_details = {
-                        'InstanceType': instance_type_info.get('InstanceType'),
+                        'InstanceType': instance_type_name,
                         'GpuName': gpu_details.get('Name'),
                         'GpuManufacturer': gpu_details.get('Manufacturer'),
                         'GpuCount': gpu_details.get('Count'),
-                        'GpuMemoryMiB': gpu_details.get('MemoryInfo', {}).get('SizeInMiB')
+                        'GpuMemoryMiB': gpu_details.get('MemoryInfo', {}).get('SizeInMiB'),
+                        'InferredInterconnect': inferred_interconnect
                     }
                     gpu_instances_info.append(instance_details)
         
@@ -55,7 +65,7 @@ if __name__ == '__main__':
             print(
                 f"  Type: {gpu_type['InstanceType']}, Name: {gpu_type['GpuName']}, "
                 f"Manufacturer: {gpu_type['GpuManufacturer']}, Count: {gpu_type['GpuCount']}, "
-                f"Memory (MiB): {gpu_type['GpuMemoryMiB']}"
+                f"Memory (MiB): {gpu_type['GpuMemoryMiB']}, Interconnect: {gpu_type['InferredInterconnect']}"
             )
     else:
         print("No GPU instance types found or error in default region.")
@@ -71,7 +81,7 @@ if __name__ == '__main__':
             print(
                 f"  Type: {gpu_type['InstanceType']}, Name: {gpu_type['GpuName']}, "
                 f"Manufacturer: {gpu_type['GpuManufacturer']}, Count: {gpu_type['GpuCount']}, "
-                f"Memory (MiB): {gpu_type['GpuMemoryMiB']}"
+                f"Memory (MiB): {gpu_type['GpuMemoryMiB']}, Interconnect: {gpu_type['InferredInterconnect']}"
             )
     else:
         print(f"No GPU instance types found or error in {specific_region}.")
