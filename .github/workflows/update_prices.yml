@@ -35,6 +35,7 @@ jobs:
           KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
           RUNPOD_KEY: ${{ secrets.RUNPOD_KEY }}
           GCP_API_KEY: ${{ secrets.GCP_API_KEY }}
+          LAMBDALABS_API_KEY: ${{ secrets.LAMBDALABS_API_KEY }}
 
       - name: Update charts and README
         run: python update_gpu_readme.py
