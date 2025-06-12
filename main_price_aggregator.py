@@ -33,10 +33,10 @@ def fetch_all_gpus():
 
 if __name__ == "__main__":
     gpus = fetch_all_gpus()
-    # process_buy_box_data(gpus)
-    # process_runpod_prices(gpus)
-    # process_gcp_prices(gpus)
-    # process_lambdalabs_prices(gpus)
+    process_buy_box_data(gpus)
+    process_runpod_prices(gpus)
+    process_gcp_prices(gpus)
+    process_lambdalabs_prices(gpus)
     process_modal_prices(gpus)
     # process_amazon_used_data(gpus)
     #in the next step i want to 
