@@ -8,8 +8,18 @@ from selenium.webdriver.chrome.options import Options
 import time
 from bs4 import BeautifulSoup
 import re
+from datetime import datetime
+from dotenv import load_dotenv
+from supabase import create_client
+
+# Load environment variables from .env file
+load_dotenv()
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 GPU_MAPPING = {
+    # DB Name -> Modal Name
     "NVIDIA B200 SXM 192 GB": "Nvidia B200",
     "NVIDIA H200 SXM 141 GB": "Nvidia H200",
     "NVIDIA H100 SXM5 80 GB": "Nvidia H100",
@@ -18,153 +28,154 @@ GPU_MAPPING = {
     "NVIDIA L40S": "Nvidia L40S",
     "NVIDIA A10G": "Nvidia A10G",
     "NVIDIA Tesla T4": "Nvidia T4",
+    "NVIDIA L4": "Nvidia L4",
 }
 
-def get_modal_gpu_prices():
+def get_modal_gpu_prices(headless=True):
     """Get Modal pricing page HTML after clicking a specific button"""
     
     url = "https://modal.com/pricing"
-    xpath = "/html/body/div/div[1]/div[3]/div/div[3]/div/div[1]/div/button/div[1]/div[1]"
+    # Using a more robust selector to find the button containing "Per hour".
+    # Absolute XPaths are brittle and can break with minor page layout changes.
+    xpath = "//button[contains(., 'Per hour')]"
     
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")  # Uncomment to hide browser
+    if headless:
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--window-size=1920,1080")
     
+    driver = None
     try:
-        print("Starting browser...")
+        print("Starting browser to fetch Modal prices...")
         driver = webdriver.Chrome(options=chrome_options)
         
-        print("Navigating to Modal pricing page...")
         driver.get(url)
         
-        print("Waiting for page to load...")
+        print("Waiting for page to load and 'Per hour' button to be clickable...")
+        # Increased wait time for reliability on slower connections or complex pages
+        wait = WebDriverWait(driver, 20)
+        button = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+        
+        print("Clicking 'Per hour' button...")
+        button.click()
+        
+        # A short sleep to allow content to load after the click.
         time.sleep(3)
         
-        print("Looking for button to click...")
-        try:
-            wait = WebDriverWait(driver, 10)
-            button = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
-            
-            print("Clicking button...")
-            button.click()
-            
-            print("Waiting for page to update after click...")
-            time.sleep(3)
-            
-        except Exception as click_error:
-            print(f"Could not find/click button: {click_error}")
-            print("Continuing to save current page content...")
-        
-        print("Getting HTML content...")
         html = driver.page_source
         
-        with open("modal_pricing_after_click.html", "w", encoding="utf-8") as f:
-            f.write(html)
+        print("✓ HTML fetched from Modal.")
         
-        print("✓ HTML saved to modal_pricing_after_click.html")
-        
-        driver.quit()
         return html
         
     except Exception as e:
-        print(f"Error: {e}")
-        if 'driver' in locals():
-            driver.quit()
+        print(f"An error occurred during web scraping: {e}")
         return None
+    finally:
+        if driver:
+            driver.quit()
 
 def extract_gpu_prices_from_html(html_content):
-    """Extract GPU prices from Modal pricing HTML"""
-    from bs4 import BeautifulSoup
-    import re
-    
+    """Extract GPU prices from Modal pricing HTML based on the saved file."""
     soup = BeautifulSoup(html_content, 'html.parser')
     gpu_prices = {}
     
     try:
-        # The pricing data is rendered in the page as HTML elements
-        # Look for the "line-item" divs that contain GPU names and prices
+        # The items are in a list of divs with class 'line-item'.
         line_items = soup.find_all('div', class_='line-item')
         
         for item in line_items:
-            # Get the GPU name (first paragraph with text-light-green/60 class)
+            # The GPU name is in a <p> tag with a specific class.
             name_element = item.find('p', class_='text-light-green/60')
-            if not name_element:
-                continue
-                
-            gpu_name = name_element.get_text(strip=True)
-            
-            # Get the price (paragraph with "price" class)
+            # The price is in a <p> tag with class 'price'.
             price_element = item.find('p', class_='price')
-            if not price_element:
-                continue
-                
-            price_text = price_element.get_text(strip=True)
             
-            # Extract price value from text like "$0.001736 / sec" 
-            price_match = re.search(r'^\$(\d+\.?\d*)', price_text)
-            if price_match:
-                price_per_sec = float(price_match.group(1))
-                # Convert to per hour
-                price_per_hour = price_per_sec * 3600
-                gpu_prices[gpu_name] = price_per_hour
-                print(f"Found: {gpu_name} -> ${price_per_hour:.2f}/hour")
+            if name_element and price_element:
+                gpu_name = name_element.get_text(strip=True)
+                
+                # This ensures we skip non-GPU entries like CPU and Memory.
+                if "Nvidia" not in gpu_name and "AMD" not in gpu_name:
+                    continue
+                
+                price_text = price_element.get_text(strip=True)
+                
+                # The price is already per hour, e.g., "$3.95 / h".
+                price_match = re.search(r'\$(\d+\.?\d*)', price_text)
+                if price_match:
+                    price_per_hour = float(price_match.group(1))
+                    gpu_prices[gpu_name] = round(price_per_hour, 4)
         
         return gpu_prices
         
     except Exception as e:
-        print(f"Error extracting prices: {e}")
+        print(f"Error extracting prices from HTML: {e}")
         return {}
 
-def map_modal_prices_to_gpu_mapping(modal_prices):
-    """Map Modal GPU names to our database GPU names"""
-    mapped_prices = {}
+def get_raw_modal_prices():
+    """Main function to get Modal GPU prices"""
+    html_content = get_modal_gpu_prices()
     
-    # Reverse the GPU_MAPPING to go from Modal names to our names
-    reverse_mapping = {v: k for k, v in GPU_MAPPING.items()}
-    
-    for modal_name, price in modal_prices.items():
-        if modal_name in reverse_mapping:
-            our_gpu_name = reverse_mapping[modal_name]
-            mapped_prices[our_gpu_name] = price
-            print(f"Mapped: {modal_name} -> {our_gpu_name} -> ${price:.2f}/hour")
-        else:
-            print(f"No mapping found for: {modal_name}")
-    
-    return mapped_prices
-
-def get_mapped_modal_prices():
-    """Main function to get Modal GPU prices mapped to our GPU names"""
-    html_file = "modal_pricing_after_click.html"
-    
-    # Check if HTML file exists, if not fetch it
-    if not os.path.exists(html_file):
-        print("HTML file not found, fetching from web...")
-        get_modal_gpu_prices()
-    
-    # Read and parse HTML file
-    try:
-        with open(html_file, 'r', encoding='utf-8') as f:
-            html_content = f.read()
-        
-        print("Extracting GPU prices from HTML...")
-        modal_prices = extract_gpu_prices_from_html(html_content)
-        
-        if not modal_prices:
-            print("No prices found in HTML")
-            return {}
-        
-        print(f"Found {len(modal_prices)} GPU prices")
-        
-        # Map to our GPU names
-        mapped_prices = map_modal_prices_to_gpu_mapping(modal_prices)
-        
-        return mapped_prices
-        
-    except Exception as e:
-        print(f"Error reading HTML file: {e}")
+    if not html_content:
+        print("Failed to get HTML content from web.")
         return {}
 
-if __name__ == "__main__":
-    prices = get_mapped_modal_prices()
-    print(f"\nExtracted {len(prices)} mapped GPU prices:")
-    for gpu, price in prices.items():
-        print(f"  {gpu}: ${price}")
+    raw_prices = extract_gpu_prices_from_html(html_content)
+    
+    if not raw_prices:
+        print("No prices found in HTML")
+
+    return raw_prices
+
+def process_modal_prices(gpu_rows):
+    """
+    Fetches Modal prices and prepares a batch update for Supabase.
+    """
+    raw_scraped_prices = get_raw_modal_prices()
+
+    if not raw_scraped_prices:
+        print("Could not retrieve Modal prices. Aborting update.")
+        return
+        
+    print("Scraped Modal prices:", raw_scraped_prices)
+
+    updates = []
+    now = datetime.now().isoformat()
+
+    # Create a reverse mapping from Modal Name -> DB Name for logging unmapped GPUs
+    reverse_gpu_mapping = {v: k for k, v in GPU_MAPPING.items()}
+    
+    # Log any scraped GPUs that we don't have in our mapping
+    for modal_name in raw_scraped_prices:
+        if modal_name not in reverse_gpu_mapping:
+            print(f"Warning: Scraped GPU '{modal_name}' not found in GPU_MAPPING values.")
+
+    for db_row in gpu_rows:
+        db_name = db_row['gpu_name']
+        modal_name = GPU_MAPPING.get(db_name)
+        
+        if not modal_name:
+            # This is not an error, just means we don't track this DB GPU on Modal
+            continue
+            
+        price = raw_scraped_prices.get(modal_name)
+        if price is None:
+            print(f"Info: No price found on Modal for '{modal_name}' (from DB GPU '{db_name}'). It might be out of stock or unlisted.")
+            continue
+
+        modal_jsonb = db_row.get("modal") or {}
+        modal_jsonb[now] = price
+
+        updates.append({
+            "id": db_row['id'],
+            "modal": modal_jsonb
+        })
+
+    if updates:
+        supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+        supabase.table('gpu-price-tracker').upsert(updates).execute()
+        print(f"Batch updated {len(updates)} rows with Modal prices.")
+    else:
+        print("No updates to perform for Modal.")
