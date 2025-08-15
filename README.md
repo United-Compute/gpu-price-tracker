@@ -12,7 +12,7 @@ Files are named after the GPU (e.g., `NVIDIA_H100_PCIe_80_GB.json`) and updated 
 
 ## TABLE BELOW IS UPDATED DAILY!
 
-_Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
+_Last updated: <!-- LAST_UPDATED -->2025-08-15<!-- LAST_UPDATED -->_
 
 <!-- PRICES_START -->
 <table>
@@ -29,6 +29,44 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <th>Bandwidth</th>
     <th>Release Date</th>
     <th>Link</th>
+  </tr>
+  <tr>
+    <td>Quadro RTX 5000</td>
+    <td>$835.00</td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>22.3</td>
+    <td>230</td>
+    <td>0.027</td>
+    <td>0.1</td>
+    <td>16</td>
+    <td>256</td>
+    <td>448</td>
+    <td>2018-08-13</td>
+    <td><a href="https://amzn.to/44JZUVa">Link</a></td>
+  </tr>
+  <tr>
+    <td>NVIDIA Tesla V100 SXM2 16 GB</td>
+    <td></td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_Tesla_V100_SXM2_16_GB.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_Tesla_V100_SXM2_16_GB.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>31.33</td>
+    <td>250</td>
+    <td></td>
+    <td>0.13</td>
+    <td>16</td>
+    <td>4096</td>
+    <td>897</td>
+    <td>2017-06-21</td>
+    <td><a href="None">Link</a></td>
   </tr>
   <tr>
     <td>NVIDIA H200 SXM 141 GB</td>
@@ -67,25 +105,6 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td>864</td>
     <td>2022-10-13</td>
     <td><a href="https://www.amazon.com/Graphics-Accelerator-900-2G133-0080-000-PG133G-TCSL40SPCIE-PB/dp/B0CLTDCZ82?sr=8-1">Link</a></td>
-  </tr>
-  <tr>
-    <td>Quadro RTX 5000</td>
-    <td>$835.00</td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/Quadro_RTX_5000.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>22.3</td>
-    <td>230</td>
-    <td>0.027</td>
-    <td>0.1</td>
-    <td>16</td>
-    <td>256</td>
-    <td>448</td>
-    <td>2018-08-13</td>
-    <td><a href="https://amzn.to/44JZUVa">Link</a></td>
   </tr>
   <tr>
     <td>NVIDIA A30 PCIe</td>
@@ -145,6 +164,25 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="https://amzn.to/42Rzz4W">Link</a></td>
   </tr>
   <tr>
+    <td>NVIDIA RTX 2000 Ada Generation</td>
+    <td>$684.59</td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>12</td>
+    <td>70</td>
+    <td>0.018</td>
+    <td>0.17</td>
+    <td>16</td>
+    <td>128</td>
+    <td>256</td>
+    <td>2024-02-12</td>
+    <td><a href="https://amzn.to/42Pvv5b">Link</a></td>
+  </tr>
+  <tr>
     <td>NVIDIA H100 PCIe 96 GB</td>
     <td>$29,999.00</td>
     <td>
@@ -202,6 +240,25 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="https://www.amazon.com/NVIDIA-900-2G414-0000-000-Inferencing-Accelerator-Passive/dp/B073V8MVK9/ref=sr_1_1?crid=FKB126ZI0KWC&dib=eyJ2IjoiMSJ9.VYsk1MbuAbfrXt1FHoQG3sdV9LQHXZO4Nj0YjD_Koc3t6xTCjk3QG1N_PH5lKLr3GNZIQ2l6fbVaHAQJsV_hFqSNc2nB2LF53yW6KAx931U_1aE1gkXnTLyRmejv9qJQI0I-nDvVQWxWB88XsJ0WW13TidqThtbhwPkOMj5kQF0D4BsyqMycUgD-1NdVx18F54uDomTFu6aI-YRwYNquU7HfasOH2wppfXoLflYjARM.8o2kUG6DV5Qn6wBPcJBgtI8fViEgL0xeCvWEG-pHqKQ&dib_tag=se&keywords=NVIDIA+Tesla+P4&qid=1747574886&sprefix=nvidia+tesla+p4%2Caps%2C198&sr=8-1">Link</a></td>
   </tr>
   <tr>
+    <td>NVIDIA GeForce RTX 5080</td>
+    <td>$1,308.91</td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>56.28</td>
+    <td>360</td>
+    <td>0.043</td>
+    <td>0.16</td>
+    <td>16</td>
+    <td>256</td>
+    <td>960</td>
+    <td>2025-01-30</td>
+    <td><a href="https://amzn.to/3EHu6Wt">Link</a></td>
+  </tr>
+  <tr>
     <td>NVIDIA B200 SXM 192 GB</td>
     <td></td>
     <td>
@@ -221,27 +278,8 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="None">Link</a></td>
   </tr>
   <tr>
-    <td>NVIDIA GeForce RTX 5080</td>
-    <td>$1,315.99</td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_5080.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>56.28</td>
-    <td>360</td>
-    <td>0.043</td>
-    <td>0.16</td>
-    <td>16</td>
-    <td>256</td>
-    <td>960</td>
-    <td>2025-01-30</td>
-    <td><a href="https://amzn.to/3EHu6Wt">Link</a></td>
-  </tr>
-  <tr>
     <td>NVIDIA A100 40GB PCle</td>
-    <td>$6,669.00</td>
+    <td>$7,169.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A100_40GB_PCle.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_A100_40GB_PCle.png" alt="Price History" style="display:block;margin:auto;">
@@ -250,7 +288,7 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     </td>
     <td>77.97</td>
     <td>250</td>
-    <td>0.012</td>
+    <td>0.011</td>
     <td>0.3</td>
     <td>40</td>
     <td>5120</td>
@@ -260,7 +298,7 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
   </tr>
   <tr>
     <td>NVIDIA Tesla T4</td>
-    <td>$761.69</td>
+    <td>$878.00</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_Tesla_T4.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_Tesla_T4.png" alt="Price History" style="display:block;margin:auto;">
@@ -269,7 +307,7 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     </td>
     <td>65.13</td>
     <td>70</td>
-    <td>0.086</td>
+    <td>0.074</td>
     <td>0.93</td>
     <td>16</td>
     <td>256</td>
@@ -297,25 +335,6 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="https://www.amazon.com/Nvidia-RTX-5000-Quadro-GDDR6/dp/B0DF5SDY2B?sr=8-1">Link</a></td>
   </tr>
   <tr>
-    <td>NVIDIA RTX A5000</td>
-    <td>$1,859.99</td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>27.77</td>
-    <td>230</td>
-    <td>0.015</td>
-    <td>0.12</td>
-    <td>24</td>
-    <td>384</td>
-    <td>768</td>
-    <td>2021-04-12</td>
-    <td><a href="https://amzn.to/42OxN4D">Link</a></td>
-  </tr>
-  <tr>
     <td>NVIDIA GeForce RTX 3090 Ti</td>
     <td>$1,899.00</td>
     <td>
@@ -333,6 +352,25 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td>1008</td>
     <td>2022-01-27</td>
     <td><a href="https://amzn.to/42OvLBx">Link</a></td>
+  </tr>
+  <tr>
+    <td>NVIDIA RTX A5000</td>
+    <td>$1,850.69</td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_A5000.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>27.77</td>
+    <td>230</td>
+    <td>0.015</td>
+    <td>0.12</td>
+    <td>24</td>
+    <td>384</td>
+    <td>768</td>
+    <td>2021-04-12</td>
+    <td><a href="https://amzn.to/42OxN4D">Link</a></td>
   </tr>
   <tr>
     <td>NVIDIA A100 80GB PCle</td>
@@ -374,7 +412,7 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 4090</td>
-    <td>$3,158.00</td>
+    <td>$3,139.99</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4090.png" alt="Price History" style="display:block;margin:auto;">
@@ -411,25 +449,6 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="None">Link</a></td>
   </tr>
   <tr>
-    <td>NVIDIA GeForce RTX 3090</td>
-    <td>$1,499.99</td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>35.58</td>
-    <td>350</td>
-    <td>0.024</td>
-    <td>0.1</td>
-    <td>24</td>
-    <td>384</td>
-    <td>936.2</td>
-    <td>2020-09-01</td>
-    <td><a href="https://amzn.to/3EJX0oX">Link</a></td>
-  </tr>
-  <tr>
     <td>Nvidia GeForce RTX 2080</td>
     <td>$775.00</td>
     <td>
@@ -447,6 +466,25 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td>448</td>
     <td>2018-09-20</td>
     <td><a href="https://amzn.to/3GJgdaL">Link</a></td>
+  </tr>
+  <tr>
+    <td>NVIDIA GeForce RTX 3090</td>
+    <td>$1,499.99</td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_3090.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>35.58</td>
+    <td>350</td>
+    <td>0.024</td>
+    <td>0.1</td>
+    <td>24</td>
+    <td>384</td>
+    <td>936.2</td>
+    <td>2020-09-01</td>
+    <td><a href="https://amzn.to/3EJX0oX">Link</a></td>
   </tr>
   <tr>
     <td>NVIDIA RTX A4500</td>
@@ -487,25 +525,6 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="https://www.amazon.com/NVIDIA-Tesla-Graphics-ACELLERATOR-900-2G193-0000-000/dp/B0D9J1KZZX?sr=8-1">Link</a></td>
   </tr>
   <tr>
-    <td>NVIDIA GeForce RTX 4080 SUPER</td>
-    <td>$1,599.99</td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4080_SUPER.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4080_SUPER.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>52.22</td>
-    <td>320</td>
-    <td>0.033</td>
-    <td>0.16</td>
-    <td>16</td>
-    <td>256</td>
-    <td>736.3</td>
-    <td>2024-01-08</td>
-    <td><a href="https://www.amazon.com/NVIDIA-GeForce-4080-Super-GDDR6X/dp/B0CVNM2LBK/ref=sr_1_4?crid=2U2SK52TBS866&dib=eyJ2IjoiMSJ9.y5KqWCXN6dUZFwWS0GZN7CatpbldyN-k42dqdJWXnKc9XEPO-D9fo5GGZ1sORtEi1JbfGtLTCg39Q2_HHSgDLGf-IXwfkWv3sJ8gMxJfXHA5JTk3HlytXlu9ILjNSTv7riHudxLLPlkQJYQX8ifsikdLGYiIKEwNLlQ1r8aGI4arefXGRX5ysQgVG4w66dZRSeH7fhnGEFn0iJ8IYnuxjSkNhzxcYgYFSYNe1wYOQGc.9YPXWbcuXiBNeh-uioOY_zFbGhTEaR2qkw3cSuLQ1a4&dib_tag=se&keywords=nvidia+geforce+rtx+4080+super+founders+edition&qid=1747568434&sprefix=NVIDIA+GeForce+RTX+4080+SUPER+found%2Caps%2C411&sr=8-4">Link</a></td>
-  </tr>
-  <tr>
     <td>NVIDIA GeForce RTX 4070 Ti</td>
     <td></td>
     <td>
@@ -523,6 +542,25 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td>504.2</td>
     <td>2023-01-03</td>
     <td><a href="None">Link</a></td>
+  </tr>
+  <tr>
+    <td>NVIDIA GeForce RTX 4080 SUPER</td>
+    <td>$1,599.99</td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4080_SUPER.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4080_SUPER.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>52.22</td>
+    <td>320</td>
+    <td>0.033</td>
+    <td>0.16</td>
+    <td>16</td>
+    <td>256</td>
+    <td>736.3</td>
+    <td>2024-01-08</td>
+    <td><a href="https://www.amazon.com/NVIDIA-GeForce-4080-Super-GDDR6X/dp/B0CVNM2LBK/ref=sr_1_4?crid=2U2SK52TBS866&dib=eyJ2IjoiMSJ9.y5KqWCXN6dUZFwWS0GZN7CatpbldyN-k42dqdJWXnKc9XEPO-D9fo5GGZ1sORtEi1JbfGtLTCg39Q2_HHSgDLGf-IXwfkWv3sJ8gMxJfXHA5JTk3HlytXlu9ILjNSTv7riHudxLLPlkQJYQX8ifsikdLGYiIKEwNLlQ1r8aGI4arefXGRX5ysQgVG4w66dZRSeH7fhnGEFn0iJ8IYnuxjSkNhzxcYgYFSYNe1wYOQGc.9YPXWbcuXiBNeh-uioOY_zFbGhTEaR2qkw3cSuLQ1a4&dib_tag=se&keywords=nvidia+geforce+rtx+4080+super+founders+edition&qid=1747568434&sprefix=NVIDIA+GeForce+RTX+4080+SUPER+found%2Caps%2C411&sr=8-4">Link</a></td>
   </tr>
   <tr>
     <td>NVIDIA A40 PCIe</td>
@@ -677,25 +715,6 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td><a href="https://amzn.to/4lQKJ2H">Link</a></td>
   </tr>
   <tr>
-    <td>NVIDIA Tesla V100 SXM2 16 GB</td>
-    <td></td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_Tesla_V100_SXM2_16_GB.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_Tesla_V100_SXM2_16_GB.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>31.33</td>
-    <td>250</td>
-    <td></td>
-    <td>0.13</td>
-    <td>16</td>
-    <td>4096</td>
-    <td>897</td>
-    <td>2017-06-21</td>
-    <td><a href="None">Link</a></td>
-  </tr>
-  <tr>
     <td>NVIDIA RTX 4000 Ada Generation</td>
     <td>$1,595.00</td>
     <td>
@@ -732,25 +751,6 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     <td>288</td>
     <td>2021-08-10</td>
     <td><a href="None">Link</a></td>
-  </tr>
-  <tr>
-    <td>NVIDIA RTX 2000 Ada Generation</td>
-    <td>$684.59</td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_RTX_2000_Ada_Generation.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>12</td>
-    <td>70</td>
-    <td>0.018</td>
-    <td>0.17</td>
-    <td>16</td>
-    <td>128</td>
-    <td>256</td>
-    <td>2024-02-12</td>
-    <td><a href="https://amzn.to/42Pvv5b">Link</a></td>
   </tr>
   <tr>
     <td>NVIDIA H100 SXM5 80 GB</td>
@@ -887,7 +887,7 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
   </tr>
   <tr>
     <td>NVIDIA GeForce RTX 4060 Ti</td>
-    <td>$590.05</td>
+    <td>$584.16</td>
     <td>
       <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4060_Ti.png">
         <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GeForce_RTX_4060_Ti.png" alt="Price History" style="display:block;margin:auto;">
@@ -896,7 +896,7 @@ _Last updated: <!-- LAST_UPDATED -->2025-08-14<!-- LAST_UPDATED -->_
     </td>
     <td>22.06</td>
     <td>160</td>
-    <td>0.037</td>
+    <td>0.038</td>
     <td>0.14</td>
     <td>8</td>
     <td>128</td>
