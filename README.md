@@ -12,7 +12,7 @@ Files are named after the GPU (e.g., `NVIDIA_H100_PCIe_80_GB.json`) and updated 
 
 ## TABLE BELOW IS UPDATED DAILY!
 
-_Last updated: <!-- LAST_UPDATED -->2026-01-29<!-- LAST_UPDATED -->_
+_Last updated: <!-- LAST_UPDATED -->2026-01-30<!-- LAST_UPDATED -->_
 
 <!-- PRICES_START -->
 <table>
