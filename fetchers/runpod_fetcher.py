@@ -50,12 +50,14 @@ def process_runpod_prices(gpu_rows):
     runpod.api_key = RUNPOD_KEY
 
     # Get all available GPUs from RunPod
+    # RunPod lists every GPU with its prices; a secure price of 0 means it isn't offered on Secure Cloud.
     available_gpus = runpod.get_gpus()
     runpod_prices = {}
     for gpu in available_gpus:
-        gpu_id = gpu["id"]
-        gpu_info = runpod.get_gpu(gpu_id)
-        runpod_prices[gpu["displayName"]] = gpu_info.get("securePrice")
+        name = gpu.get("name") or gpu.get("displayName")
+        price = (gpu.get("price") or {}).get("secure", gpu.get("securePrice"))
+        if name and price:
+            runpod_prices[name] = price
 
     updates = []
     now = datetime.now().isoformat()
