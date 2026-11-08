@@ -12,7 +12,7 @@ Files are named after the GPU (e.g., `NVIDIA_H100_PCIe_80_GB.json`) and updated 
 
 ## TABLE BELOW IS UPDATED DAILY!
 
-_Last updated: <!-- LAST_UPDATED -->2026-02-02<!-- LAST_UPDATED -->_
+_Last updated: <!-- LAST_UPDATED -->2026-11-08<!-- LAST_UPDATED -->_
 
 <!-- PRICES_START -->
 <table>
@@ -145,25 +145,6 @@ _Last updated: <!-- LAST_UPDATED -->2026-02-02<!-- LAST_UPDATED -->_
     <td><a href="https://amzn.to/3EJX0oX">Link</a></td>
   </tr>
   <tr>
-    <td>NVIDIA GH200</td>
-    <td></td>
-    <td>
-      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GH200.png">
-        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GH200.png" alt="Price History" style="display:block;margin:auto;">
-        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
-      </a>
-    </td>
-    <td>1979</td>
-    <td>1000</td>
-    <td></td>
-    <td>1.98</td>
-    <td>96</td>
-    <td>6144</td>
-    <td>4900</td>
-    <td>2023-05-28</td>
-    <td><a href="None">Link</a></td>
-  </tr>
-  <tr>
     <td>NVIDIA A100 80GB PCle</td>
     <td></td>
     <td>
@@ -199,6 +180,25 @@ _Last updated: <!-- LAST_UPDATED -->2026-02-02<!-- LAST_UPDATED -->_
     <td>8192</td>
     <td>4100</td>
     <td>2024-03-18</td>
+    <td><a href="None">Link</a></td>
+  </tr>
+  <tr>
+    <td>NVIDIA GH200</td>
+    <td></td>
+    <td>
+      <a href="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GH200.png">
+        <img src="https://raw.githubusercontent.com/yachty66/gpu-price-tracker/main/price_history_charts/NVIDIA_GH200.png" alt="Price History" style="display:block;margin:auto;">
+        <div style="font-size:10px; color:#888; text-align:center;">(click to see)</div>
+      </a>
+    </td>
+    <td>1979</td>
+    <td>1000</td>
+    <td></td>
+    <td>1.98</td>
+    <td>96</td>
+    <td>6144</td>
+    <td>4900</td>
+    <td>2023-05-28</td>
     <td><a href="None">Link</a></td>
   </tr>
   <tr>
