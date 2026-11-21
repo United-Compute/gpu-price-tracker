@@ -1,0 +1,49 @@
+name: Watchdog
+
+# Checks the collector's health and data, and opens/closes GitHub issues labelled "alert".
+# Runs after every collector run, and on its own schedule so a collector that stopped
+# running entirely is noticed too; a server also triggers it every 15 minutes, because GitHub's
+# own schedule skips runs. Issues are opened by github-actions[bot] so GitHub emails the assignee.
+on:
+  workflow_run:
+    workflows: ["Collect GPU offers"]
+    types: [completed]
+  schedule:
+    - cron: "11,41 * * * *"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Open a test alert (run again without this to close it)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # The collector's code is private (yachty66/gpu-index); this public repo runs it and
+      # publishes the data. Read-only deploy key.
+      - uses: actions/checkout@v4
+        with:
+          repository: yachty66/gpu-index
+          ssh-key: ${{ secrets.GPU_INDEX_DEPLOY_KEY }}
+          path: src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python -m collector.watchdog
+        working-directory: src
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          GH_TOKEN: ${{ github.token }}
+          WATCHDOG_TEST: ${{ inputs.test && 'open' || '' }}

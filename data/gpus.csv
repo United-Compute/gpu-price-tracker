@@ -1,0 +1,77 @@
+gpu,name,vendor,vram_gb,class,form_factor
+a10-24gb,A10,NVIDIA,24,datacenter,PCIe
+a100-pcie-40gb,A100 PCIe 40GB,NVIDIA,40,datacenter,PCIe
+a100-pcie-80gb,A100 PCIe 80GB,NVIDIA,80,datacenter,PCIe
+a100-sxm-40gb,A100 SXM 40GB,NVIDIA,40,datacenter,SXM
+a100-sxm-80gb,A100 SXM 80GB,NVIDIA,80,datacenter,SXM
+a10g-24gb,A10G,NVIDIA,24,datacenter,PCIe
+a16-16gb,A16,NVIDIA,16,datacenter,PCIe
+a30-24gb,A30,NVIDIA,24,datacenter,PCIe
+a40-48gb,A40,NVIDIA,48,datacenter,PCIe
+b200-sxm-180gb,B200 SXM,NVIDIA,180,datacenter,SXM
+b300-mig-1g-34gb,B300 MIG slice 34GB,NVIDIA,34,datacenter,MIG
+b300-sxm-288gb,B300 SXM,NVIDIA,268,datacenter,SXM
+gb200-186gb,GB200,NVIDIA,186,datacenter,Superchip
+gb300-288gb,GB300,NVIDIA,288,datacenter,Superchip
+gh200-96gb,GH200,NVIDIA,96,datacenter,Superchip
+h100-nvl-94gb,H100 NVL,NVIDIA,94,datacenter,PCIe
+h100-pcie-80gb,H100 PCIe,NVIDIA,80,datacenter,PCIe
+h100-sxm-80gb,H100 SXM,NVIDIA,80,datacenter,SXM
+h200-nvl-141gb,H200 NVL,NVIDIA,141,datacenter,PCIe
+h200-sxm-141gb,H200 SXM,NVIDIA,141,datacenter,SXM
+l4-24gb,L4,NVIDIA,24,datacenter,PCIe
+l40-48gb,L40,NVIDIA,48,datacenter,PCIe
+l40s-48gb,L40S,NVIDIA,48,datacenter,PCIe
+mi300x-192gb,AMD MI300X,AMD,192,datacenter,OAM
+mi325x-256gb,AMD MI325X,AMD,256,datacenter,OAM
+mi350x-288gb,AMD MI350X,AMD,294,datacenter,OAM
+mi355x-288gb,AMD MI355X,AMD,288,datacenter,OAM
+p100-pcie-16gb,Tesla P100,NVIDIA,16,datacenter,PCIe
+quadro-rtx-6000-24gb,Quadro RTX 6000,NVIDIA,24,workstation,PCIe
+rtx-2000-ada-16gb,RTX 2000 Ada,NVIDIA,16,workstation,PCIe
+rtx-3060-12gb,RTX 3060,NVIDIA,12,consumer,PCIe
+rtx-3060-ti-8gb,RTX 3060 Ti,NVIDIA,8,consumer,PCIe
+rtx-3070-8gb,RTX 3070,NVIDIA,8,consumer,PCIe
+rtx-3070-ti-8gb,RTX 3070 Ti,NVIDIA,8,consumer,PCIe
+rtx-3080-10gb,RTX 3080,NVIDIA,10,consumer,PCIe
+rtx-3080-ti-12gb,RTX 3080 Ti,NVIDIA,12,consumer,PCIe
+rtx-3090-24gb,RTX 3090,NVIDIA,24,consumer,PCIe
+rtx-3090-ti-24gb,RTX 3090 Ti,NVIDIA,24,consumer,PCIe
+rtx-4000-ada-20gb,RTX 4000 Ada,NVIDIA,20,workstation,PCIe
+rtx-4060-ti-16gb,RTX 4060 Ti,NVIDIA,16,consumer,PCIe
+rtx-4070-12gb,RTX 4070,NVIDIA,12,consumer,PCIe
+rtx-4070-super-12gb,RTX 4070 SUPER,NVIDIA,12,consumer,PCIe
+rtx-4070-ti-12gb,RTX 4070 Ti,NVIDIA,12,consumer,PCIe
+rtx-4070-ti-super-16gb,RTX 4070 Ti SUPER,NVIDIA,16,consumer,PCIe
+rtx-4080-16gb,RTX 4080,NVIDIA,16,consumer,PCIe
+rtx-4080-super-16gb,RTX 4080 SUPER,NVIDIA,16,consumer,PCIe
+rtx-4090-24gb,RTX 4090,NVIDIA,24,consumer,PCIe
+rtx-4090d-24gb,GeForce RTX 4090 D,NVIDIA,,,
+rtx-5000-ada-32gb,RTX 5000 Ada,NVIDIA,32,workstation,PCIe
+rtx-5060-8gb,RTX 5060,NVIDIA,8,consumer,PCIe
+rtx-5060-ti-16gb,RTX 5060 Ti,NVIDIA,16,consumer,PCIe
+rtx-5070-12gb,RTX 5070,NVIDIA,12,consumer,PCIe
+rtx-5070-ti-16gb,RTX 5070 Ti,NVIDIA,16,consumer,PCIe
+rtx-5080-16gb,RTX 5080,NVIDIA,16,consumer,PCIe
+rtx-5090-32gb,RTX 5090,NVIDIA,32,consumer,PCIe
+rtx-5880-ada-48gb,RTX 5880 Ada,NVIDIA,48,workstation,PCIe
+rtx-6000-ada-48gb,RTX 6000 Ada,NVIDIA,48,workstation,PCIe
+rtx-a2000-6gb,RTX A2000,NVIDIA,6,workstation,PCIe
+rtx-a4000-16gb,RTX A4000,NVIDIA,16,workstation,PCIe
+rtx-a4500-20gb,RTX A4500,NVIDIA,20,workstation,PCIe
+rtx-a5000-24gb,RTX A5000,NVIDIA,24,workstation,PCIe
+rtx-a6000-48gb,RTX A6000,NVIDIA,48,workstation,PCIe
+rtx-pro-4000-24gb,RTX PRO 4000,NVIDIA,24,workstation,PCIe
+rtx-pro-4500-32gb,RTX PRO 4500,NVIDIA,32,workstation,PCIe
+rtx-pro-4500-server-32gb,RTX PRO 4500 Server,NVIDIA,32,datacenter,PCIe
+rtx-pro-5000-48gb,RTX PRO 5000,NVIDIA,48,workstation,PCIe
+rtx-pro-6000-max-q-workstation-96gb,RTX PRO 6000 Max-Q,NVIDIA,96,workstation,PCIe
+rtx-pro-6000-mig-1g-24gb,RTX PRO 6000 MIG slice 24GB,NVIDIA,24,datacenter,MIG
+rtx-pro-6000-mig-2g-48gb,RTX PRO 6000 MIG slice 48GB,NVIDIA,48,datacenter,MIG
+rtx-pro-6000-server-96gb,RTX PRO 6000 Server,NVIDIA,96,datacenter,PCIe
+rtx-pro-6000-workstation-96gb,RTX PRO 6000,NVIDIA,96,workstation,PCIe
+t4-16gb,T4,NVIDIA,16,datacenter,PCIe
+v100-pcie-16gb,V100 PCIe,NVIDIA,16,datacenter,PCIe
+v100-pcie-32gb,V100 PCIe 32GB,NVIDIA,32,datacenter,PCIe
+v100-sxm-16gb,V100 SXM2,NVIDIA,16,datacenter,SXM
+v100-sxm-32gb,V100 SXM2 32GB,NVIDIA,32,datacenter,SXM

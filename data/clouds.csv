@@ -1,0 +1,60 @@
+cloud,name,url,marketplace,reseller,via,added_at
+akamai,Akamai Cloud,https://www.linode.com/pricing/#gpu,False,False,,2026-11-21T17:45:05Z
+akash,Akash,https://akash.network/pricing/gpus/,True,False,,2026-11-20T17:27:35Z
+aquanode,Aquanode,https://www.aquanode.io,True,True,,2026-11-21T17:37:38Z
+clore,Clore.ai,https://clore.ai/marketplace,True,False,,2026-11-20T17:43:19Z
+cloudgpu,CloudGPU,https://cloudgpu.app/pricing,False,False,,2026-11-20T17:41:59Z
+cloudrift,CloudRift,https://www.cloudrift.ai/pricing,True,False,,2026-11-20T17:27:37Z
+crusoe,Crusoe,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:37Z
+cudo,Cudo Compute,https://www.cudocompute.com/pricing,True,False,,2026-11-21T17:45:05Z
+daytona,Daytona,https://www.daytona.io/pricing,False,False,,2026-11-20T19:04:12Z
+deepinfra,Deep Infra,https://deepinfra.com/pricing,False,False,,2026-11-20T18:52:19Z
+denvr,Denvr Cloud,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:37Z
+digitalocean,DigitalOcean,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:38Z
+ecohash,EcoHash,https://ecohash.com/gpu/rtx-pro-6000,False,False,,2026-11-21T17:45:07Z
+empiriolabs,EmpirioLabs,https://empiriolabs.ai/gpu-cloud,False,True,,2026-11-21T17:45:07Z
+excesssupply,Excess Supply,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:38Z
+fluence,Fluence,https://fluence.ai/gpu-cloud,True,False,,2026-11-20T18:59:41Z
+gcore,Gcore,https://gcore.com/pricing/ai,False,False,,2026-11-20T19:13:10Z
+gpuai,GPU.ai,https://gpu.ai,True,True,,2026-11-21T17:37:38Z
+gpuhub,GPUhub,https://www.gpuhub.com,False,False,,2026-11-20T18:40:19Z
+gpuwerk,GPUwerk,https://gpuwerk.com/pricing/,False,False,,2026-11-21T17:45:09Z
+hostinger,Hostinger,https://www.hostinger.com/gpu-hosting,False,False,,2026-11-20T17:46:32Z
+huggingface,Hugging Face,https://huggingface.co/docs/inference-endpoints/pricing,False,True,,2026-11-21T17:37:38Z
+hyperbolic,Hyperbolic,https://app.hyperbolic.ai/gpus,True,False,,2026-11-20T18:48:05Z
+hyperstack,Hyperstack,https://www.hyperstack.cloud/gpu-pricing,False,False,,2026-11-20T17:41:58Z
+imwt,IMWT,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:38Z
+ionet,io.net,https://io.net/cloud,False,False,,2026-11-20T19:11:47Z
+jarvislabs,Jarvislabs,https://jarvislabs.ai/pricing,False,False,,2026-11-20T18:38:19Z
+lambda,Lambda,https://lambda.ai/pricing,False,False,,2026-11-20T17:27:35Z
+latitude,Latitude.sh,https://www.latitude.sh/pricing,False,False,,2026-11-20T18:38:20Z
+lium,Lium,https://lium.io,True,False,,2026-11-20T17:27:35Z
+lyceum,Lyceum,https://lyceum.technology/pricing,False,False,,2026-11-20T17:27:36Z
+massedcompute,Massed Compute,https://vm.massedcompute.com/pricing,False,False,,2026-11-20T18:36:05Z
+matpool,Matpool,https://matpool.com/catalog/pricing,True,False,,2026-11-21T17:45:14Z
+meshive,Meshive,https://meshive.ai/pricing,True,False,,2026-11-20T19:04:14Z
+nebius,Nebius,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:40Z
+nebulablock,Nebula Block,https://www.nebulablock.com/pricing/gpu-instances,False,False,,2026-11-20T17:46:33Z
+nosana,Nosana,https://nosana.com/gpu-marketplace,True,False,,2026-11-21T17:45:15Z
+nova_cloud,Nova Cloud,https://nova-cloud.ai,False,False,,2026-11-21T17:45:14Z
+novita,Novita AI,https://novita.ai/gpus,False,False,,2026-11-20T18:36:07Z
+oblivus,Oblivus,https://oblivus.com/pricing/,False,False,,2026-11-20T18:48:05Z
+openrelay,OpenRelay,https://openrelay.inc/pricing,False,False,,2026-11-20T18:38:21Z
+paperspace,Paperspace,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:40Z
+paraloncloud,ParalonCloud,https://paraloncloud.com/pricing,True,False,,2026-11-20T18:59:46Z
+quantacloud,QuantaCloud,https://quantacloud.net/pricing,True,False,,2026-11-20T17:41:58Z
+quickpod,QuickPod,https://quickpod.io,True,False,,2026-11-20T17:43:18Z
+runcrate,Runcrate,https://www.runcrate.ai/pricing,True,False,,2026-11-20T18:40:24Z
+runpod,RunPod,https://www.runpod.io/pricing,False,False,,2026-11-20T17:27:39Z
+scaleway,Scaleway,https://www.scaleway.com/en/pricing/gpu/,False,False,,2026-11-20T17:27:40Z
+sesterce,Sesterce,https://docs.sesterce.com/,False,True,,2026-11-21T17:37:42Z
+spheron,Spheron,https://www.spheron.ai/pricing,True,True,,2026-11-21T17:37:42Z
+swissgpu,SwissGPU,https://www.swissgpu.ch,False,False,,2026-11-20T18:32:58Z
+targon,Targon,https://targon.com/pricing,False,False,,2026-11-21T17:45:18Z
+theta,Theta EdgeCloud,https://www.thetaedgecloud.com/pricing,True,False,,2026-11-20T18:56:15Z
+thunder,Thunder Compute,https://www.thundercompute.com/pricing,False,False,,2026-11-20T17:27:36Z
+vast,Vast.ai,https://vast.ai/pricing,True,False,,2026-11-20T17:27:43Z
+verda,Verda,https://verda.com/pricing,False,False,,2026-11-20T18:36:09Z
+voltagegpu,VoltageGPU,https://voltagegpu.com/standard-gpus,True,False,,2026-11-20T17:43:21Z
+voltagepark,Voltage Park,https://platform.shadeform.ai/,False,False,Shadeform,2026-11-21T17:37:42Z
+vultr,Vultr,https://www.vultr.com/pricing/#cloud-gpu,False,False,,2026-11-20T17:27:37Z
