@@ -10,7 +10,7 @@ a30-24gb,A30,NVIDIA,24,datacenter,PCIe
 a40-48gb,A40,NVIDIA,48,datacenter,PCIe
 b200-sxm-180gb,B200 SXM,NVIDIA,180,datacenter,SXM
 b300-mig-1g-34gb,B300 MIG slice 34GB,NVIDIA,34,datacenter,MIG
-b300-sxm-288gb,B300 SXM,NVIDIA,268,datacenter,SXM
+b300-sxm-288gb,B300 SXM,NVIDIA,288,datacenter,SXM
 gb200-186gb,GB200,NVIDIA,186,datacenter,Superchip
 gb300-288gb,GB300,NVIDIA,288,datacenter,Superchip
 gh200-96gb,GH200,NVIDIA,96,datacenter,Superchip
