@@ -17,7 +17,7 @@ gh200-96gb,GH200,NVIDIA,96,datacenter,Superchip
 h100-nvl-94gb,H100 NVL,NVIDIA,94,datacenter,PCIe
 h100-pcie-80gb,H100 PCIe,NVIDIA,80,datacenter,PCIe
 h100-sxm-80gb,H100 SXM,NVIDIA,80,datacenter,SXM
-h200-nvl-141gb,H200 NVL,NVIDIA,143,datacenter,PCIe
+h200-nvl-141gb,H200 NVL,NVIDIA,141,datacenter,PCIe
 h200-sxm-141gb,H200 SXM,NVIDIA,141,datacenter,SXM
 l4-24gb,L4,NVIDIA,24,datacenter,PCIe
 l40-48gb,L40,NVIDIA,48,datacenter,PCIe
