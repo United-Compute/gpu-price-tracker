@@ -62,7 +62,7 @@ jobs:
         if: always()
         working-directory: src
         run: |
-          pip install -q "kaggle>=2.2"
+          pip install -q "kaggle>=2.2" six  # kaggle 2.2.5 imports six without declaring it
           python -m collector.kaggle_upload ../data
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
