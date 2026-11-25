@@ -1,0 +1,14 @@
+{
+  "id": "maxhager/where-can-you-actually-rent-an-h100",
+  "title": "Where can you actually rent an H100?",
+  "code_file": "where-can-you-actually-rent-an-h100.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["maxhager/gpu-cloud-prices"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "keywords": []
+}
