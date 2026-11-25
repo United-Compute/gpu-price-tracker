@@ -46,3 +46,13 @@ jobs:
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "Data update $(date -u +%Y-%m-%d)"
           git push
+      # Same files on Hugging Face (huggingface.co/datasets/united-compute/gpu-prices), with a
+      # dataset card generated from the schema. Repo secret HF_TOKEN: fine-grained, write access
+      # to the united-compute org.
+      - name: Mirror to Hugging Face
+        working-directory: src
+        run: |
+          pip install -q "huggingface_hub>=0.26"
+          python -m collector.hf ../data
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
