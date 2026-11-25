@@ -18,7 +18,7 @@ All in [`data/`](data), updated once a day. Every table comes as CSV and Parquet
 | [`offers.csv`](data/offers.csv) / `.parquet` / [`.json`](data/offers.json) | Current state: one row per offer (cloud × GPU product × cloud type × pricing) |
 | [`daily_prices.csv`](data/daily_prices.csv) / `.parquet` | Per offer and day: lowest, highest and time-weighted average rentable price, share of the day in stock. **Start here for charts.** |
 | `history/YYYY/MM/YYYY-MM-DD.csv.gz`, `price_changes.parquet` | Full history: one row every time a price or availability changed (checked every 15 minutes) |
-| [`index_daily.csv`](data/index_daily.csv) / `.parquet` | [GPU Price Index](https://unitedcompute.ai/gpu-price-index) daily close, high and low (H100, H200, B200, A100, RTX 5090) |
+| [`index_daily.csv`](data/index_daily.csv) / `.parquet` | [GPU Price Index](https://unitedcompute.ai/gpu-price-index) daily close, high and low (H100, H200, B200, B300, A100, RTX 5090) |
 | [`clouds.csv`](data/clouds.csv) / `.parquet` | The clouds, with links, and whether they are marketplaces or resellers |
 | [`gpus.csv`](data/gpus.csv) / `.parquet` | GPU catalog: canonical id, name, vendor, VRAM, class, form factor |
 
