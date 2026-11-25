@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "about": "Public schema of United Compute's GPU price data. One definition for the API (unitedcompute.ai/api/v1), the open dataset (github.com/United-Compute/gpu-price-tracker) and its mirrors. The export checks its columns against this file; the watchdog checks the live API against it.",
+  "license": "CC BY 4.0. Attribution: United Compute, https://unitedcompute.ai",
+  "conventions": {
+    "prices": "USD per GPU per hour, for one GPU (single-GPU offers only). Other currencies are converted when collected.",
+    "timestamps": "ISO 8601 in UTC, e.g. 2026-11-25T12:00:00Z.",
+    "csv": "Empty cell = null. Booleans are true/false. `regions` is a JSON array in a text cell.",
+    "parquet": "Same columns and order as the CSV. `regions` is a JSON text column."
+  },
+  "tables": {
+    "offers": {
+      "description": "Current state: one row per offer (cloud x GPU product x cloud type x pricing). Rows are kept when an offer is sold out or disappears, so check `in_stock` and `fresh`.",
+      "files": ["offers.csv", "offers.parquet", "offers.json"],
+      "api": {"path": "/api/v1/offers?in_stock=any&pricing=any&limit=1", "list": "offers", "match": "exact"},
+      "fields": [
+        {"name": "offer_id", "type": "string", "description": "Stable id of the offer: cloud, the cloud's own product id, tier and pricing. Joins `offers`, `price_changes` and `daily_prices`."},
+        {"name": "gpu_id", "type": "string", "description": "Canonical GPU id, e.g. h100-sxm-80gb (see `gpus`)."},
+        {"name": "gpu_name", "type": "string", "description": "GPU name, e.g. H100 SXM."},
+        {"name": "vendor", "type": "string", "description": "NVIDIA, AMD, ..."},
+        {"name": "vram_gb", "type": "integer", "nullable": true, "description": "GPU memory in GB."},
+        {"name": "provider_id", "type": "string", "description": "Cloud id, e.g. runpod (see `clouds`)."},
+        {"name": "provider_name", "type": "string", "description": "Cloud name, e.g. RunPod."},
+        {"name": "provider_url", "type": "string", "nullable": true, "description": "Where to rent it."},
+        {"name": "reseller", "type": "boolean", "description": "true if the cloud resells other clouds' GPUs."},
+        {"name": "via", "type": "string", "nullable": true, "description": "Platform the data comes through, e.g. Shadeform; null if read from the cloud directly."},
+        {"name": "cloud_type", "type": "string", "description": "datacenter (the cloud's own or partner data centers) or community (marketplace hosts)."},
+        {"name": "pricing", "type": "string", "description": "on_demand or spot."},
+        {"name": "currency", "type": "string", "description": "Always USD."},
+        {"name": "gpu_count", "type": "integer", "description": "Always 1: prices are for a single GPU."},
+        {"name": "price_per_hour", "type": "number", "nullable": true, "description": "Price you can rent at now; null if sold out or not fresh."},
+        {"name": "list_price_per_hour", "type": "number", "nullable": true, "description": "Advertised price, which may not be available."},
+        {"name": "in_stock", "type": "boolean", "nullable": true, "description": "Rentable at the last check; null if not fresh."},
+        {"name": "stock_level", "type": "string", "nullable": true, "description": "low, medium, high or available (cloud reports no level); null if not reported or not fresh."},
+        {"name": "regions", "type": "json", "description": "Where it is in stock: array of {id, location, stock}. id is a data center id or a 2-letter country code. Empty if not reported or not fresh."},
+        {"name": "checked_at", "type": "timestamp", "description": "Last time the collector saw this offer."},
+        {"name": "changed_at", "type": "timestamp", "description": "Last time its price or stock changed."},
+        {"name": "first_seen_at", "type": "timestamp", "description": "When the collector first saw this offer."},
+        {"name": "fresh", "type": "boolean", "description": "Checked within the last 2 hours. Offers that are not fresh have no current price or stock."}
+      ]
+    },
+    "price_changes": {
+      "description": "Full history: one row each time an offer's price, stock or regions changed (checked every 15 minutes). The state holds until the next row for the same offer_id.",
+      "files": ["history/YYYY/MM/YYYY-MM-DD.csv.gz", "price_changes.parquet"],
+      "fields": [
+        {"name": "observed_at", "type": "timestamp", "description": "When the change was seen."},
+        {"name": "offer_id", "type": "string", "description": "See `offers`."},
+        {"name": "gpu_id", "type": "string", "description": "See `offers`."},
+        {"name": "provider_id", "type": "string", "description": "See `offers`."},
+        {"name": "cloud_type", "type": "string", "description": "See `offers`."},
+        {"name": "pricing", "type": "string", "description": "See `offers`."},
+        {"name": "price_per_hour", "type": "number", "nullable": true, "description": "Rentable price from this moment; null if sold out."},
+        {"name": "list_price_per_hour", "type": "number", "nullable": true, "description": "Advertised price."},
+        {"name": "in_stock", "type": "boolean", "nullable": true, "description": "Rentable from this moment."},
+        {"name": "stock_level", "type": "string", "nullable": true, "description": "See `offers`."},
+        {"name": "regions", "type": "json", "description": "See `offers`."}
+      ]
+    },
+    "daily_prices": {
+      "description": "One row per offer and finished UTC day, computed from price_changes (time-weighted). Use this for charts and averages.",
+      "files": ["daily_prices.csv", "daily_prices.parquet"],
+      "fields": [
+        {"name": "date", "type": "date", "description": "UTC day."},
+        {"name": "offer_id", "type": "string", "description": "See `offers`."},
+        {"name": "gpu_id", "type": "string", "description": "See `offers`."},
+        {"name": "provider_id", "type": "string", "description": "See `offers`."},
+        {"name": "cloud_type", "type": "string", "description": "See `offers`."},
+        {"name": "pricing", "type": "string", "description": "See `offers`."},
+        {"name": "price_min", "type": "number", "nullable": true, "description": "Lowest rentable price that day; null if never in stock."},
+        {"name": "price_max", "type": "number", "nullable": true, "description": "Highest rentable price that day."},
+        {"name": "price_avg", "type": "number", "nullable": true, "description": "Average rentable price, weighted by time in stock."},
+        {"name": "list_price_per_hour", "type": "number", "nullable": true, "description": "Advertised price at the end of the day."},
+        {"name": "in_stock_share", "type": "number", "description": "Share of the day (0-1) the offer was rentable, counted from when it was first seen."}
+      ]
+    },
+    "index_daily": {
+      "description": "United Compute GPU Price Index, daily: median across clouds of each cloud's cheapest rentable on-demand price for one GPU (resellers excluded). Method: https://unitedcompute.ai/gpu-price-index#methodology",
+      "files": ["index_daily.csv", "index_daily.parquet"],
+      "fields": [
+        {"name": "date", "type": "date", "description": "UTC day (finished days only)."},
+        {"name": "index", "type": "string", "description": "Index id, e.g. h100."},
+        {"name": "ticker", "type": "string", "description": "e.g. UC-H100."},
+        {"name": "gpu_id", "type": "string", "description": "See `gpus`."},
+        {"name": "close", "type": "number", "nullable": true, "description": "Index value at the end of the day."},
+        {"name": "high", "type": "number", "nullable": true, "description": "Highest hourly value that day."},
+        {"name": "low", "type": "number", "nullable": true, "description": "Lowest hourly value that day."},
+        {"name": "clouds", "type": "integer", "nullable": true, "description": "Clouds in the index at the close."}
+      ]
+    },
+    "clouds": {
+      "description": "Clouds the collector reads.",
+      "files": ["clouds.csv", "clouds.parquet"],
+      "api": {"path": "/api/v1/providers", "list": "providers", "match": "subset"},
+      "fields": [
+        {"name": "id", "type": "string", "description": "Cloud id (provider_id elsewhere)."},
+        {"name": "name", "type": "string", "description": "Cloud name."},
+        {"name": "url", "type": "string", "nullable": true, "description": "Website or pricing page."},
+        {"name": "marketplace", "type": "boolean", "description": "true for marketplaces, where hosts list their own machines."},
+        {"name": "reseller", "type": "boolean", "description": "See `offers`."},
+        {"name": "via", "type": "string", "nullable": true, "description": "See `offers`."},
+        {"name": "added_at", "type": "timestamp", "description": "When the collector started reading this cloud."}
+      ]
+    },
+    "gpus": {
+      "description": "GPU catalog.",
+      "files": ["gpus.csv", "gpus.parquet"],
+      "api": {"path": "/api/v1/gpus", "list": "gpus", "match": "subset"},
+      "fields": [
+        {"name": "id", "type": "string", "description": "Canonical GPU id (gpu_id elsewhere)."},
+        {"name": "name", "type": "string", "description": "GPU name."},
+        {"name": "vendor", "type": "string", "description": "NVIDIA, AMD, ..."},
+        {"name": "vram_gb", "type": "integer", "nullable": true, "description": "GPU memory in GB."},
+        {"name": "class", "type": "string", "nullable": true, "description": "datacenter, workstation or consumer."},
+        {"name": "form_factor", "type": "string", "nullable": true, "description": "SXM, PCIe, ..."}
+      ]
+    }
+  }
+}
