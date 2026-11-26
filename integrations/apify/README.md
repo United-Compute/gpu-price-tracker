@@ -1,6 +1,6 @@
 # GPU Cloud Prices & Availability
 
-Get **live cloud GPU rental prices and whether you can actually rent them**, across 59 GPU clouds,
+Get **live cloud GPU rental prices and whether you can actually rent them**, across 50+ GPU clouds,
 checked every 15 minutes: RunPod, Lambda, Vast.ai, Nebius, Crusoe, Hyperstack, Verda, Lium,
 CloudRift, Clore.ai and more. H100, H200, B200, B300, A100, L40S, RTX 4090, RTX 5090, MI300X and
 70+ other GPU models.
@@ -16,7 +16,7 @@ API. No scraping, no proxies, no API key, runs in seconds.
 |---|---|---|
 | **Offers** (default) | Every single-GPU offer: cloud, GPU, price per hour, advertised price, stock level, regions, data center vs marketplace, on-demand vs spot | Cheapest H100 in Europe under $3/hr |
 | **Cheapest per GPU** | One row per GPU model: cheapest price now (any cloud, data center, marketplace, spot) and how many clouds have it | Every GPU with 80 GB+ and its cheapest price |
-| **Clouds** | The 59 clouds tracked, with offers in stock and in total | Which clouds have the most GPUs available |
+| **Clouds** | Every cloud tracked, with offers in stock and in total | Which clouds have the most GPUs available |
 | **GPU Price Index** | The United Compute GPU Price Index (median across clouds) for H100, H200, B200, B300, A100, RTX 5090, current or hourly/daily history | H100 rental price index, daily |
 
 ## Use cases
