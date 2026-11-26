@@ -3,7 +3,7 @@
   "name": "ai.unitedcompute/gpu-prices",
   "title": "GPU Cloud Prices",
   "description": "Live rental prices and real availability for 70+ GPUs (H100, B200, RTX 5090) across 50+ clouds.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://unitedcompute.ai/api",
   "repository": {
     "url": "https://github.com/United-Compute/gpu-price-tracker",
@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://unitedcompute.ai/mcp"
+      "url": "https://unitedcompute.ai/mcp?src=registry"
     }
   ],
   "icons": [
