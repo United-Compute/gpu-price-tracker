@@ -6,10 +6,20 @@
     "mode": {
       "title": "What to get",
       "type": "string",
-      "description": "offers = every single offer (cloud × GPU × price × stock). gpus = one row per GPU model with its cheapest price. providers = the clouds tracked. index = the GPU Price Index (median across clouds).",
+      "description": "offers = every single offer (cloud \u00d7 GPU \u00d7 price \u00d7 stock). gpus = one row per GPU model with its cheapest price. providers = the clouds tracked. index = the GPU Price Index (median across clouds).",
       "editor": "select",
-      "enum": ["offers", "gpus", "providers", "index"],
-      "enumTitles": ["Offers (cloud, GPU, price, stock, regions)", "Cheapest price per GPU model", "Clouds tracked", "GPU Price Index"],
+      "enum": [
+        "offers",
+        "gpus",
+        "providers",
+        "index"
+      ],
+      "enumTitles": [
+        "Offers (cloud, GPU, price, stock, regions)",
+        "Cheapest price per GPU model",
+        "Clouds tracked",
+        "GPU Price Index"
+      ],
       "default": "offers"
     },
     "gpu": {
@@ -42,7 +52,11 @@
       "type": "string",
       "description": "datacenter = the cloud's own machines. community = marketplace hosts (Vast.ai, Clore, ...), often cheaper.",
       "editor": "select",
-      "enum": ["any", "datacenter", "community"],
+      "enum": [
+        "any",
+        "datacenter",
+        "community"
+      ],
       "default": "any"
     },
     "pricing": {
@@ -50,7 +64,11 @@
       "type": "string",
       "description": "on_demand runs until you stop it; spot is cheaper but can be stopped by the cloud.",
       "editor": "select",
-      "enum": ["on_demand", "spot", "any"],
+      "enum": [
+        "on_demand",
+        "spot",
+        "any"
+      ],
       "default": "on_demand"
     },
     "inStock": {
@@ -58,8 +76,16 @@
       "type": "string",
       "description": "true = only what you can rent right now. false = only sold-out offers. any = both.",
       "editor": "select",
-      "enum": ["true", "false", "any"],
-      "enumTitles": ["Rentable now", "Sold out", "Both"],
+      "enum": [
+        "true",
+        "false",
+        "any"
+      ],
+      "enumTitles": [
+        "Rentable now",
+        "Sold out",
+        "Both"
+      ],
       "default": "true"
     },
     "provider": {
@@ -72,8 +98,13 @@
       "title": "Vendor",
       "type": "string",
       "editor": "select",
-      "enum": ["any", "nvidia", "amd"],
-      "default": "any"
+      "enum": [
+        "any",
+        "nvidia",
+        "amd"
+      ],
+      "default": "any",
+      "description": "GPU vendor."
     },
     "excludeResellers": {
       "title": "Exclude resellers",
@@ -85,9 +116,16 @@
       "title": "Sort",
       "type": "string",
       "editor": "select",
-      "enum": ["price", "vram"],
-      "enumTitles": ["Cheapest first", "Most memory first"],
-      "default": "price"
+      "enum": [
+        "price",
+        "vram"
+      ],
+      "enumTitles": [
+        "Cheapest first",
+        "Most memory first"
+      ],
+      "default": "price",
+      "description": "Order of the offers."
     },
     "limit": {
       "title": "Max offers",
@@ -102,7 +140,14 @@
       "type": "string",
       "description": "Index mode only.",
       "editor": "select",
-      "enum": ["h100", "h200", "b200", "b300", "a100", "rtx-5090"],
+      "enum": [
+        "h100",
+        "h200",
+        "b200",
+        "b300",
+        "a100",
+        "rtx-5090"
+      ],
       "default": "h100"
     },
     "history": {
@@ -110,7 +155,11 @@
       "type": "string",
       "description": "Index mode only: none = current value; hourly or daily = one row per point.",
       "editor": "select",
-      "enum": ["none", "hourly", "daily"],
+      "enum": [
+        "none",
+        "hourly",
+        "daily"
+      ],
       "default": "daily"
     }
   }
