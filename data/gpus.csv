@@ -24,7 +24,7 @@ l40-48gb,L40,NVIDIA,48,datacenter,PCIe
 l40s-48gb,L40S,NVIDIA,48,datacenter,PCIe
 mi300x-192gb,AMD MI300X,AMD,192,datacenter,OAM
 mi325x-256gb,AMD MI325X,AMD,256,datacenter,OAM
-mi350x-288gb,AMD MI350X,AMD,294,datacenter,OAM
+mi350x-288gb,AMD MI350X,AMD,288,datacenter,OAM
 mi355x-288gb,AMD MI355X,AMD,288,datacenter,OAM
 p100-pcie-16gb,Tesla P100,NVIDIA,16,datacenter,PCIe
 quadro-rtx-6000-24gb,Quadro RTX 6000,NVIDIA,24,workstation,PCIe
