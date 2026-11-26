@@ -1,0 +1,41 @@
+{
+  "actorSpecification": 1,
+  "name": "gpu-prices",
+  "title": "GPU Cloud Prices & Availability (H100, H200, B200, RTX 5090)",
+  "description": "Live cloud GPU rental prices and real availability across 59 clouds (RunPod, Lambda, Vast.ai, Nebius, Crusoe and more), checked every 15 minutes. Cheapest H100, H200, B200, B300, A100, RTX 4090 and RTX 5090 per hour, by region, VRAM and price. Plus the GPU Price Index. No API key.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "../README.md",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "GPU offers",
+      "views": {
+        "overview": {
+          "title": "Offers",
+          "transformation": {
+            "fields": ["gpu_name", "provider_name", "price_per_hour", "list_price_per_hour", "in_stock", "stock_level", "cloud_type", "pricing", "vram_gb", "regions", "checked_at"]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "gpu_name": { "label": "GPU" },
+              "provider_name": { "label": "Cloud" },
+              "price_per_hour": { "label": "Price now ($/GPU-hr)", "format": "number" },
+              "list_price_per_hour": { "label": "Advertised ($/GPU-hr)", "format": "number" },
+              "in_stock": { "label": "Rentable now", "format": "boolean" },
+              "stock_level": { "label": "Stock" },
+              "cloud_type": { "label": "Type" },
+              "pricing": { "label": "Pricing" },
+              "vram_gb": { "label": "VRAM (GB)", "format": "number" },
+              "regions": { "label": "Regions", "format": "array" },
+              "checked_at": { "label": "Checked", "format": "date" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

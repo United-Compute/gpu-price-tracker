@@ -1,0 +1,14 @@
+{
+  "name": "united-compute-gpu-prices",
+  "version": "1.0.0",
+  "description": "Apify Actor: live cloud GPU prices and availability from unitedcompute.ai",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.4.0"
+  },
+  "license": "MIT"
+}

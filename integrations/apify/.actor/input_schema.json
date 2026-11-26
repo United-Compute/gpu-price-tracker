@@ -1,0 +1,117 @@
+{
+  "title": "GPU prices",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "mode": {
+      "title": "What to get",
+      "type": "string",
+      "description": "offers = every single offer (cloud × GPU × price × stock). gpus = one row per GPU model with its cheapest price. providers = the clouds tracked. index = the GPU Price Index (median across clouds).",
+      "editor": "select",
+      "enum": ["offers", "gpus", "providers", "index"],
+      "enumTitles": ["Offers (cloud, GPU, price, stock, regions)", "Cheapest price per GPU model", "Clouds tracked", "GPU Price Index"],
+      "default": "offers"
+    },
+    "gpu": {
+      "title": "GPU",
+      "type": "string",
+      "description": "GPU model, loose match: h100 matches every H100 variant. Examples: h100, h200-sxm, b200, b300, a100, rtx-5090, rtx-4090, l40s, mi300x. Comma-separate several. Empty = all.",
+      "editor": "textfield",
+      "prefill": "h100"
+    },
+    "region": {
+      "title": "Region",
+      "type": "string",
+      "description": "Where it must be in stock: an area (Europe, US, Asia), a country code (DE, US), a data-center id or a city (Frankfurt). Offers only.",
+      "editor": "textfield"
+    },
+    "maxPrice": {
+      "title": "Max price ($ per GPU-hour)",
+      "type": "number",
+      "description": "Only offers at or below this price. Offers only.",
+      "editor": "number"
+    },
+    "minVram": {
+      "title": "Min VRAM (GB)",
+      "type": "integer",
+      "description": "Minimum GPU memory.",
+      "editor": "number"
+    },
+    "cloudType": {
+      "title": "Cloud type",
+      "type": "string",
+      "description": "datacenter = the cloud's own machines. community = marketplace hosts (Vast.ai, Clore, ...), often cheaper.",
+      "editor": "select",
+      "enum": ["any", "datacenter", "community"],
+      "default": "any"
+    },
+    "pricing": {
+      "title": "Pricing",
+      "type": "string",
+      "description": "on_demand runs until you stop it; spot is cheaper but can be stopped by the cloud.",
+      "editor": "select",
+      "enum": ["on_demand", "spot", "any"],
+      "default": "on_demand"
+    },
+    "inStock": {
+      "title": "Availability",
+      "type": "string",
+      "description": "true = only what you can rent right now. false = only sold-out offers. any = both.",
+      "editor": "select",
+      "enum": ["true", "false", "any"],
+      "enumTitles": ["Rentable now", "Sold out", "Both"],
+      "default": "true"
+    },
+    "provider": {
+      "title": "Cloud",
+      "type": "string",
+      "description": "One cloud by id or name, e.g. runpod, lambda, vast. Comma-separate several. Offers only.",
+      "editor": "textfield"
+    },
+    "vendor": {
+      "title": "Vendor",
+      "type": "string",
+      "editor": "select",
+      "enum": ["any", "nvidia", "amd"],
+      "default": "any"
+    },
+    "excludeResellers": {
+      "title": "Exclude resellers",
+      "type": "boolean",
+      "description": "Leave out clouds that resell other clouds' GPUs.",
+      "default": false
+    },
+    "sort": {
+      "title": "Sort",
+      "type": "string",
+      "editor": "select",
+      "enum": ["price", "vram"],
+      "enumTitles": ["Cheapest first", "Most memory first"],
+      "default": "price"
+    },
+    "limit": {
+      "title": "Max offers",
+      "type": "integer",
+      "description": "1 to 1000.",
+      "minimum": 1,
+      "maximum": 1000,
+      "default": 100
+    },
+    "index": {
+      "title": "Index",
+      "type": "string",
+      "description": "Index mode only.",
+      "editor": "select",
+      "enum": ["h100", "h200", "b200", "b300", "a100", "rtx-5090"],
+      "default": "h100"
+    },
+    "history": {
+      "title": "Index history",
+      "type": "string",
+      "description": "Index mode only: none = current value; hourly or daily = one row per point.",
+      "editor": "select",
+      "enum": ["none", "hourly", "daily"],
+      "default": "daily"
+    }
+  }
+}
