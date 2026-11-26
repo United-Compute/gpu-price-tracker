@@ -1,0 +1,634 @@
+{
+ "openapi": "3.0.3",
+ "info": {
+  "title": "United Compute GPU Price API",
+  "version": "1.0.0",
+  "description": "Live prices and availability of single cloud GPUs (on demand, plus spot where a cloud offers it) across many GPU clouds, checked every 15 minutes by United Compute (unitedcompute.ai). price_per_hour is what one GPU costs per hour if you rent it now (USD); null means it cannot be rented right now. list_price_per_hour is the advertised price, which may not be available. No API key needed. Data refreshes every 15 minutes. Please credit unitedcompute.ai.",
+  "contact": {
+   "url": "https://unitedcompute.ai"
+  }
+ },
+ "servers": [
+  {
+   "url": "https://unitedcompute.ai"
+  }
+ ],
+ "paths": {
+  "/api/v1/offers": {
+   "get": {
+    "operationId": "searchGpuOffers",
+    "summary": "Search single-GPU on-demand offers across clouds, cheapest first",
+    "parameters": [
+     {
+      "name": "gpu",
+      "in": "query",
+      "required": false,
+      "description": "GPU id or name fragment; comma-separated for several. 'h100' matches every H100 variant, 'h100-sxm-80gb' only that one.",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "vendor",
+      "in": "query",
+      "required": false,
+      "description": "NVIDIA or AMD",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "provider",
+      "in": "query",
+      "required": false,
+      "description": "Cloud id(s), comma-separated, e.g. runpod,lambda",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "cloud_type",
+      "in": "query",
+      "required": false,
+      "description": "datacenter or community",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "datacenter",
+        "community"
+       ]
+      }
+     },
+     {
+      "name": "pricing",
+      "in": "query",
+      "required": false,
+      "description": "on_demand (default), spot, or any",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "on_demand",
+        "spot",
+        "any"
+       ]
+      }
+     },
+     {
+      "name": "region",
+      "in": "query",
+      "required": false,
+      "description": "ISO country code or name (US, DE, Germany), an area (Europe, North America, Asia, Oceania, South America, Africa), a data center id, or a city",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "min_vram",
+      "in": "query",
+      "required": false,
+      "description": "Minimum VRAM in GB",
+      "schema": {
+       "type": "number"
+      }
+     },
+     {
+      "name": "max_price",
+      "in": "query",
+      "required": false,
+      "description": "Maximum USD per GPU-hour",
+      "schema": {
+       "type": "number"
+      }
+     },
+     {
+      "name": "in_stock",
+      "in": "query",
+      "required": false,
+      "description": "true (default): only rentable now; false: only not rentable; any: all",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "true",
+        "false",
+        "any"
+       ]
+      }
+     },
+     {
+      "name": "exclude_resellers",
+      "in": "query",
+      "required": false,
+      "description": "true to drop resellers and offers read via a reseller",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "true",
+        "false"
+       ]
+      }
+     },
+     {
+      "name": "sort",
+      "in": "query",
+      "required": false,
+      "description": "price (default) or vram",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "price",
+        "vram"
+       ]
+      }
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "description": "Max results, 1-1000 (default 100)",
+      "schema": {
+       "type": "number"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Offers",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "updated_at": {
+           "type": "string",
+           "format": "date-time",
+           "description": "Last successful collector run",
+           "nullable": true
+          },
+          "stale": {
+           "type": "boolean"
+          },
+          "count": {
+           "type": "integer"
+          },
+          "offers": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "offer_id": {
+              "type": "string",
+              "description": "Stable offer id (cloud, its product id, tier, pricing); joins the open dataset's price_changes and daily_prices"
+             },
+             "gpu_id": {
+              "type": "string",
+              "description": "Stable GPU id, e.g. h100-sxm-80gb"
+             },
+             "gpu_name": {
+              "type": "string",
+              "description": "GPU name, e.g. H100 SXM"
+             },
+             "vendor": {
+              "type": "string",
+              "description": "NVIDIA, AMD, ..."
+             },
+             "vram_gb": {
+              "type": "integer",
+              "nullable": true
+             },
+             "provider_id": {
+              "type": "string",
+              "description": "Cloud id, e.g. runpod"
+             },
+             "provider_name": {
+              "type": "string",
+              "description": "Cloud name"
+             },
+             "provider_url": {
+              "type": "string",
+              "description": "Where to rent it",
+              "nullable": true
+             },
+             "reseller": {
+              "type": "boolean",
+              "description": "The cloud resells other clouds' GPUs"
+             },
+             "via": {
+              "type": "string",
+              "description": "Read through this reseller (e.g. Shadeform); price is the reseller's",
+              "nullable": true
+             },
+             "cloud_type": {
+              "type": "string",
+              "description": "datacenter = provider's own data centers; community = marketplace hosts",
+              "enum": [
+               "datacenter",
+               "community"
+              ]
+             },
+             "pricing": {
+              "type": "string",
+              "description": "on_demand, or spot (cheaper, can be stopped by the provider)",
+              "enum": [
+               "on_demand",
+               "spot"
+              ]
+             },
+             "currency": {
+              "type": "string",
+              "description": "USD",
+              "enum": [
+               "USD"
+              ]
+             },
+             "gpu_count": {
+              "type": "integer",
+              "enum": [
+               1
+              ]
+             },
+             "price_per_hour": {
+              "type": "number",
+              "description": "USD per GPU-hour you can rent at right now; null = not rentable now",
+              "nullable": true
+             },
+             "list_price_per_hour": {
+              "type": "number",
+              "description": "Advertised USD per GPU-hour (may not be available)",
+              "nullable": true
+             },
+             "in_stock": {
+              "type": "boolean",
+              "description": "null = the cloud does not publish availability or the check is stale",
+              "nullable": true
+             },
+             "stock_level": {
+              "type": "string",
+              "enum": [
+               "low",
+               "medium",
+               "high",
+               "available",
+               null
+              ],
+              "nullable": true
+             },
+             "regions": {
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "id": {
+                 "type": "string",
+                 "description": "Data center id or ISO country code"
+                },
+                "location": {
+                 "type": "string",
+                 "nullable": true
+                },
+                "stock": {
+                 "type": "string",
+                 "description": "Stock level there"
+                }
+               }
+              }
+             },
+             "checked_at": {
+              "type": "string",
+              "description": "Last check (ISO 8601)",
+              "format": "date-time"
+             },
+             "changed_at": {
+              "type": "string",
+              "description": "Last change in price or stock (ISO 8601)",
+              "format": "date-time"
+             },
+             "first_seen_at": {
+              "type": "string",
+              "description": "When the collector first saw this offer (ISO 8601)",
+              "format": "date-time"
+             },
+             "fresh": {
+              "type": "boolean",
+              "description": "Checked within the last 2 hours"
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/gpus": {
+   "get": {
+    "operationId": "listGpus",
+    "summary": "One row per GPU model with the cheapest price you can rent it at right now",
+    "parameters": [
+     {
+      "name": "gpu",
+      "in": "query",
+      "required": false,
+      "description": "GPU id or name fragment; comma-separated for several. 'h100' matches every H100 variant, 'h100-sxm-80gb' only that one.",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "vendor",
+      "in": "query",
+      "required": false,
+      "description": "NVIDIA or AMD",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
+      "name": "min_vram",
+      "in": "query",
+      "required": false,
+      "description": "Minimum VRAM in GB",
+      "schema": {
+       "type": "number"
+      }
+     },
+     {
+      "name": "in_stock",
+      "in": "query",
+      "required": false,
+      "description": "true: only GPUs rentable somewhere now",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "true",
+        "false"
+       ]
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "GPUs, most popular first",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "updated_at": {
+           "type": "string",
+           "format": "date-time",
+           "description": "Last successful collector run",
+           "nullable": true
+          },
+          "stale": {
+           "type": "boolean"
+          },
+          "count": {
+           "type": "integer"
+          },
+          "gpus": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "id": {
+              "type": "string",
+              "description": "Stable GPU id"
+             },
+             "name": {
+              "type": "string",
+              "description": "GPU name"
+             },
+             "vendor": {
+              "type": "string",
+              "description": "Vendor"
+             },
+             "vram_gb": {
+              "type": "integer",
+              "nullable": true
+             },
+             "class": {
+              "type": "string",
+              "enum": [
+               "datacenter",
+               "workstation",
+               "consumer",
+               null
+              ],
+              "nullable": true
+             },
+             "form_factor": {
+              "type": "string",
+              "nullable": true
+             },
+             "cheapest_price_per_hour": {
+              "type": "number",
+              "description": "Cheapest USD per GPU-hour rentable now, any cloud",
+              "nullable": true
+             },
+             "cheapest_provider_id": {
+              "type": "string",
+              "nullable": true
+             },
+             "cheapest_datacenter_price_per_hour": {
+              "type": "number",
+              "nullable": true
+             },
+             "cheapest_community_price_per_hour": {
+              "type": "number",
+              "nullable": true
+             },
+             "cheapest_spot_price_per_hour": {
+              "type": "number",
+              "nullable": true
+             },
+             "offers_in_stock": {
+              "type": "integer"
+             },
+             "offers_total": {
+              "type": "integer"
+             },
+             "providers_in_stock": {
+              "type": "integer"
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/providers": {
+   "get": {
+    "operationId": "listProviders",
+    "summary": "Every cloud in the index",
+    "responses": {
+     "200": {
+      "description": "Providers",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "updated_at": {
+           "type": "string",
+           "format": "date-time",
+           "description": "Last successful collector run",
+           "nullable": true
+          },
+          "stale": {
+           "type": "boolean"
+          },
+          "count": {
+           "type": "integer"
+          },
+          "providers": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "id": {
+              "type": "string",
+              "description": "Cloud id"
+             },
+             "name": {
+              "type": "string",
+              "description": "Cloud name"
+             },
+             "url": {
+              "type": "string",
+              "nullable": true
+             },
+             "marketplace": {
+              "type": "boolean"
+             },
+             "reseller": {
+              "type": "boolean"
+             },
+             "via": {
+              "type": "string",
+              "nullable": true
+             },
+             "added_at": {
+              "type": "string",
+              "format": "date-time",
+              "description": "When we started tracking this cloud",
+              "nullable": true
+             },
+             "offers_in_stock": {
+              "type": "integer"
+             },
+             "offers_total": {
+              "type": "integer"
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/index": {
+   "get": {
+    "operationId": "getIndex",
+    "summary": "GPU Price Index",
+    "description": "GPU Price Index per model: the median across clouds of each cloud's cheapest rentable on-demand single-GPU price (resellers excluded, 5+ clouds required), with today's constituents and optional hourly or daily history.",
+    "parameters": [
+     {
+      "name": "index",
+      "in": "query",
+      "required": false,
+      "description": "Which index. Omit for all.",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "h100",
+        "h200",
+        "b200",
+        "b300",
+        "a100",
+        "rtx-5090"
+       ]
+      }
+     },
+     {
+      "name": "history",
+      "in": "query",
+      "required": false,
+      "description": "Add history: hourly points or daily close/high/low.",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "hourly",
+        "daily"
+       ]
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Indexes",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "updated_at": {
+           "type": "string",
+           "format": "date-time"
+          },
+          "indexes": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "index": {
+              "type": "string"
+             },
+             "ticker": {
+              "type": "string"
+             },
+             "gpu_id": {
+              "type": "string"
+             },
+             "gpu_name": {
+              "type": "string"
+             },
+             "value": {
+              "type": "number",
+              "nullable": true
+             },
+             "clouds": {
+              "type": "integer"
+             },
+             "change_24h": {
+              "type": "number",
+              "nullable": true
+             },
+             "change_7d": {
+              "type": "number",
+              "nullable": true
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
