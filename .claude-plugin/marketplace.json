@@ -1,0 +1,23 @@
+{
+  "name": "united-compute",
+  "description": "Live cloud GPU rental prices and availability from unitedcompute.ai.",
+  "owner": {
+    "name": "United Compute",
+    "url": "https://unitedcompute.ai"
+  },
+  "plugins": [
+    {
+      "name": "united-compute",
+      "source": ".",
+      "description": "Live cloud GPU rental prices. Installs the gpu-prices skill and the unitedcompute.ai MCP server.",
+      "version": "1.0.0",
+      "author": {
+        "name": "United Compute",
+        "url": "https://unitedcompute.ai"
+      },
+      "homepage": "https://unitedcompute.ai/api",
+      "repository": "https://github.com/United-Compute/gpu-price-tracker",
+      "keywords": ["gpu", "cloud", "prices", "h100"]
+    }
+  ]
+}

@@ -40,6 +40,18 @@ Rules: single GPU (1x) only; prices converted to USD and without VAT; marketplac
 price, so their price is the cheapest free machine and the stock level comes from the number of
 free machines (1–2 low, 3–9 medium, 10+ high).
 
+## Use it from an AI agent
+
+The live data is also an API and an MCP server, no key needed:
+[unitedcompute.ai/api](https://unitedcompute.ai/api). This repo ships a `gpu-prices` agent skill
+and plugin files for Claude Code, Cursor and Codex (see [skills/README.md](skills/README.md)):
+
+```bash
+npx skills add United-Compute/gpu-price-tracker                  # skill only
+claude plugin marketplace add United-Compute/gpu-price-tracker   # skill + MCP server
+claude plugin install united-compute@united-compute
+```
+
 ## License and citation
 
 [CC BY 4.0](LICENSE). Use it for anything, including commercially, as long as you credit

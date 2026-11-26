@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "united-compute": {
+      "type": "http",
+      "url": "https://unitedcompute.ai/mcp"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "united-compute",
+  "description": "Live cloud GPU rental prices and availability from unitedcompute.ai. No API key.",
+  "version": "1.0.0",
+  "author": {
+    "name": "United Compute"
+  },
+  "homepage": "https://unitedcompute.ai/api",
+  "repository": "https://github.com/United-Compute/gpu-price-tracker",
+  "keywords": ["gpu", "cloud", "prices", "h100", "inference"],
+  "mcpServers": "./.mcp.json"
+}
