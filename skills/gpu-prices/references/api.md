@@ -85,26 +85,13 @@ Each of those returned HTTP 200 against the live API when this skill was written
 
 ### Region matching
 
-The comparison is case-insensitive.
+The comparison is case-insensitive. The server works out a country for each region on an offer, from the region id (`DE`), its `location` text (`Des Moines, IA, United States`), or the parts of the id (`desmoines-usa-1`, `de/fra/2`, `EU-CZ-1`, `us-east-1`). The filter then compares against that country.
 
-**Areas.** `Europe` (alias `eu`), `North America` (`na`; the alias `usa` is North America, not the US), `Asia` (`apac`), `Oceania`, `South America` (`latam`).
+- **Country:** an ISO code or an English name. `region=DE` and `region=Germany` are the same. `US` matches `us-east-1`, `US Central 1` and `desmoines-usa-1`.
+- **Area:** `Europe` (alias `eu`), `North America` (`na`; the alias `usa` is North America, not only the US), `Asia` (`apac`, includes the Middle East), `Oceania`, `South America` (`latam`), `Africa`. Some regions only name an area, with no country (`eu-west`, `EU North 1`, `asia-pacific`). They match the area but no country.
+- **Anything else:** an exact region id (`fr-par-2`), or text in the region's id or `location`, so a city name works (`Frankfurt`, `Paris`).
 
-A data-center id matches an area when:
-
-- its first two letters are an ISO country code in that area, or
-- the id starts with that area's prefix and a hyphen: `eu-`, `us-`, `ap-`, `oc-`, `sa-`.
-
-Country codes and prefixed ids work. `FR` matches France. `EU-FR-1` matches Europe. `us-east-1` and `US-GA-2` match `region=US` and North America.
-
-The two-letter rule has false positives. `desmoines-usa-1` matches Europe because it starts with `DE`. `ME West 1` matches Europe because it starts with `ME`. Read `regions` on the rows you show. Do not tell the user an offer is in Europe only because they passed `region=Europe`.
-
-**Anything else.**
-
-- Exact id match (`fr-par-2`).
-- A two-letter query also matches ids that start with `code-` (`FR` matches `fr-par-2`, `US` matches `us-east-1`). It does not match `US Central 1` or `us/bos/1` (no hyphen). Those can still match `region=North America` via the two-letter rule.
-- A longer query matches when `location` contains it, so a city name can work (`Frankfurt`, `Paris`).
-
-`region=FR` is the reliable way to ask for France. `region=US` is the reliable way to ask for the United States when the cloud publishes `US` or `US-*` / `us-*`.
+An offer matches when any one of its regions matches. Its `regions` list still shows all of them, so read it before you name a location to the user.
 
 ### GET /api/v1/gpus
 
