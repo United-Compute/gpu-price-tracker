@@ -52,6 +52,8 @@ claude plugin marketplace add United-Compute/gpu-price-tracker   # skill + MCP s
 claude plugin install united-compute@united-compute
 ```
 
+Also on Apify: [apify.com/unitedcompute/gpu-prices](https://apify.com/unitedcompute/gpu-prices) (source in [integrations/apify](integrations/apify)).
+
 ## License and citation
 
 [CC BY 4.0](LICENSE). Use it for anything, including commercially, as long as you credit
