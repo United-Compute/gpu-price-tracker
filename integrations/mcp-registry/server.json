@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.unitedcompute/gpu-prices",
+  "title": "GPU Cloud Prices",
+  "description": "Live rental prices and real availability for 70+ GPUs (H100, B200, RTX 5090) across 50+ clouds.",
+  "version": "1.0.0",
+  "websiteUrl": "https://unitedcompute.ai/api",
+  "repository": { "url": "https://github.com/United-Compute/gpu-price-tracker", "source": "github" },
+  "remotes": [ { "type": "streamable-http", "url": "https://unitedcompute.ai/mcp" } ]
+}
