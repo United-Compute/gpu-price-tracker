@@ -6,6 +6,7 @@
   "version": "1.0",
   "buildTag": "latest",
   "input": "./input_schema.json",
+  "output": "./output_schema.json",
   "dockerfile": "./Dockerfile",
   "readme": "../README.md",
   "storages": {

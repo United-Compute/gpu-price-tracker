@@ -1,0 +1,18 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "GPU prices output",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Results",
+      "description": "One row per offer, GPU model, cloud or index point, depending on the mode.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Run summary",
+      "description": "The API URL called, the number of rows and when the data was last checked.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
+    }
+  }
+}
