@@ -2,10 +2,9 @@ name: Collect buy-side prices
 
 # New prices from shops (Google Shopping) and used prices from eBay, US and Germany, for the
 # "Rent or buy" sections on unitedcompute.ai. Weekly for now: one run is 52 SerpApi searches and
-# the free plan has 250 a month. Also triggered from the server's crontab (GitHub drops schedules).
+# the free plan has 250 a month. Triggered only from the server's crontab (Mondays 06:23 UTC,
+# `gh workflow run market.yml`): a GitHub schedule as well could double-run and burn the quota.
 on:
-  schedule:
-    - cron: "23 6 * * 1"   # Mondays 06:23 UTC
   workflow_dispatch:
 
 concurrency:
