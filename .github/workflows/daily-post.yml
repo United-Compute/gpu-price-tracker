@@ -1,0 +1,30 @@
+name: Daily post draft
+
+# The X bot (xbot/ in yachty66/gpu-index, run from Max's server) sends each day's post draft here.
+# The issue is opened by github-actions[bot], so GitHub emails the assignee. To stop that day's post,
+# comment "skip" on the issue or close it before the post time.
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Issue title"
+        required: true
+      body:
+        description: "Issue body (Markdown)"
+        required: true
+
+permissions:
+  issues: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: ${{ inputs.title }}
+          BODY: ${{ inputs.body }}
+        run: |
+          gh label create daily-post -R "$GITHUB_REPOSITORY" --color 1d76db --description "X bot daily post drafts" 2>/dev/null || true
+          gh issue create -R "$GITHUB_REPOSITORY" --title "$TITLE" --body "$BODY" --label daily-post --assignee yachty66

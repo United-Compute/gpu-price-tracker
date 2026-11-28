@@ -1,0 +1,38 @@
+name: Collect buy-side prices
+
+# New prices from shops (Google Shopping) and used prices from eBay, US and Germany, for the
+# "Rent or buy" sections on unitedcompute.ai. Weekly for now: one run is 52 SerpApi searches and
+# the free plan has 250 a month. Triggered only from the server's crontab (Mondays 06:23 UTC,
+# `gh workflow run market.yml`): a GitHub schedule as well could double-run and burn the quota.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: market
+  cancel-in-progress: false
+
+jobs:
+  market:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: yachty66/gpu-index
+          ssh-key: ${{ secrets.GPU_INDEX_DEPLOY_KEY }}
+          path: src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: src/requirements.txt
+      - run: pip install -r src/requirements.txt
+      - name: Collect
+        working-directory: src
+        run: python -m collector.market.run
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          # Official eBay Browse API (used instead of SerpApi for eBay once these exist).
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
