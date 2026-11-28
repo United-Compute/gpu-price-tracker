@@ -58,3 +58,5 @@ jobs:
           DAYTONA_API_KEY: ${{ secrets.DAYTONA_API_KEY }}
           MESHIVE_API_KEY: ${{ secrets.MESHIVE_API_KEY }}
           GCORE_API_KEY: ${{ secrets.GCORE_API_KEY }}
+          GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
